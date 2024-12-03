@@ -1,0 +1,1020 @@
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/pbist/.conda/envs/python3_6/lib/python3.6/site-packages/torch/nn/functional.py:1351: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+GPU to be used: Puneet RTX 4050
+should enbale GPU?  True
+epoch: 1
+train auc: 0.6864312638757062
+test auc: 0.6858671759688355
+Best Model saved at epoch 1 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 223.29348468780518
+epoch: 2
+train auc: 0.7108556780928206
+test auc: 0.7108485571811574
+Best Model saved at epoch 2 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 145.4760069847107
+epoch: 3
+train auc: 0.7280038916405374
+test auc: 0.726546633807988
+Best Model saved at epoch 3 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.03596234321594
+epoch: 4
+train auc: 0.7327574728666105
+test auc: 0.7334095245972023
+Best Model saved at epoch 4 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 142.88164353370667
+epoch: 5
+train auc: 0.7414495938498737
+test auc: 0.7400393030822175
+Best Model saved at epoch 5 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 145.13032793998718
+epoch: 6
+train auc: 0.7460392292801364
+test auc: 0.7436365796113317
+Best Model saved at epoch 6 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 146.58610463142395
+epoch: 7
+train auc: 0.7483912175193193
+test auc: 0.746090787835932
+Best Model saved at epoch 7 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.4192636013031
+epoch: 8
+train auc: 0.7592852147339613
+test auc: 0.75441117526231
+Best Model saved at epoch 8 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 143.7317008972168
+epoch: 9
+train auc: 0.7639709127255925
+test auc: 0.7600350540207113
+Best Model saved at epoch 9 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 143.8537154197693
+epoch: 10
+train auc: 0.7711947811740738
+test auc: 0.7671040716681028
+Best Model saved at epoch 10 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+Model saved at epoch 10 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_10
+one epoch time: 144.43831610679626
+epoch: 11
+train auc: 0.7752484164874003
+test auc: 0.7695818963832509
+Best Model saved at epoch 11 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.4008288383484
+epoch: 12
+train auc: 0.7844631252159594
+test auc: 0.7767165787604171
+Best Model saved at epoch 12 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 146.7845447063446
+epoch: 13
+train auc: 0.7881232611234544
+test auc: 0.7789897630487334
+Best Model saved at epoch 13 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 146.4454469680786
+epoch: 14
+train auc: 0.7919386384983363
+test auc: 0.7813660762037863
+Best Model saved at epoch 14 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.65389966964722
+epoch: 15
+train auc: 0.7929654371282517
+test auc: 0.7806351021384441
+one epoch time: 142.9120693206787
+epoch: 16
+train auc: 0.8011100887663057
+test auc: 0.7849151940907686
+Best Model saved at epoch 16 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.40663695335388
+epoch: 17
+train auc: 0.8099137555871327
+test auc: 0.7896758774654713
+Best Model saved at epoch 17 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 144.0082187652588
+epoch: 18
+train auc: 0.8156133897207551
+test auc: 0.7917810880780066
+Best Model saved at epoch 18 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 146.8783802986145
+epoch: 19
+train auc: 0.8210443684766211
+test auc: 0.7933783907336435
+Best Model saved at epoch 19 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 146.25178003311157
+epoch: 20
+train auc: 0.8229604170207294
+test auc: 0.7916034660327018
+Model saved at epoch 20 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_20
+one epoch time: 146.3579421043396
+epoch: 21
+train auc: 0.8336008474429989
+test auc: 0.7950181628562818
+Best Model saved at epoch 21 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 143.91502261161804
+epoch: 22
+train auc: 0.8372885573327457
+test auc: 0.793006873903382
+one epoch time: 144.49983644485474
+epoch: 23
+train auc: 0.8474396777793756
+test auc: 0.7979241595373953
+Best Model saved at epoch 23 to 2024-12-01_12-47/lstm_psb_checkpoints_best
+one epoch time: 145.76579403877258
+epoch: 24
+train auc: 0.851902066869268
+test auc: 0.7964652172049059
+one epoch time: 143.83582878112793
+epoch: 25
+train auc: 0.8642515436505117
+test auc: 0.7966044815209942
+one epoch time: 143.96643900871277
+epoch: 26
+train auc: 0.8696548434231158
+test auc: 0.7916232646048389
+one epoch time: 146.73929524421692
+epoch: 27
+train auc: 0.879644568191584
+test auc: 0.7937039148645901
+one epoch time: 145.59043884277344
+epoch: 28
+train auc: 0.8873925050462668
+test auc: 0.7912906541399697
+one epoch time: 143.43336081504822
+epoch: 29
+train auc: 0.8981498214738661
+test auc: 0.7913419598562789
+one epoch time: 144.65195965766907
+epoch: 30
+train auc: 0.9082764470263199
+test auc: 0.7908930125204358
+Model saved at epoch 30 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_30
+one epoch time: 145.7220914363861
+epoch: 31
+train auc: 0.920666332683061
+test auc: 0.7862992792206869
+one epoch time: 146.23405051231384
+epoch: 32
+train auc: 0.9298818946195164
+test auc: 0.7845966046170766
+one epoch time: 146.64599061012268
+epoch: 33
+train auc: 0.9383342727121311
+test auc: 0.7831316706228448
+one epoch time: 143.74038910865784
+epoch: 34
+train auc: 0.9455556531309897
+test auc: 0.7770461799601958
+one epoch time: 143.71599888801575
+epoch: 35
+train auc: 0.9510246361686079
+test auc: 0.7794411320109195
+one epoch time: 143.50946235656738
+epoch: 36
+train auc: 0.9599672897790003
+test auc: 0.7778980143281096
+one epoch time: 148.38533091545105
+epoch: 37
+train auc: 0.9631831597318173
+test auc: 0.773172721887
+one epoch time: 152.88334608078003
+epoch: 38
+train auc: 0.9709152137849922
+test auc: 0.7740983135849618
+one epoch time: 152.85571551322937
+epoch: 39
+train auc: 0.9775208074968992
+test auc: 0.7705392266406439
+one epoch time: 152.5067765712738
+epoch: 40
+train auc: 0.9795311291852671
+test auc: 0.7696625632355629
+Model saved at epoch 40 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_40
+one epoch time: 153.62230157852173
+epoch: 41
+train auc: 0.9839393030433731
+test auc: 0.7684805989663425
+one epoch time: 152.48537302017212
+epoch: 42
+train auc: 0.986538164844484
+test auc: 0.7695795969649661
+one epoch time: 152.9464156627655
+epoch: 43
+train auc: 0.9883811280684156
+test auc: 0.7664889837773501
+one epoch time: 152.515296459198
+epoch: 44
+train auc: 0.9912299199223134
+test auc: 0.7701916721237332
+one epoch time: 153.6575677394867
+epoch: 45
+train auc: 0.9932080384038702
+test auc: 0.7669972384237749
+one epoch time: 154.0752513408661
+epoch: 46
+train auc: 0.9927754268008183
+test auc: 0.7628188981140429
+one epoch time: 152.52917289733887
+epoch: 47
+train auc: 0.9953522829867414
+test auc: 0.7650343741972186
+one epoch time: 152.55112051963806
+epoch: 48
+train auc: 0.9947749306691449
+test auc: 0.761842788551721
+one epoch time: 152.2536337375641
+epoch: 49
+train auc: 0.9963722811037523
+test auc: 0.7632106876143689
+one epoch time: 152.34495520591736
+epoch: 50
+train auc: 0.9965949178469301
+test auc: 0.7665748111032645
+Model saved at epoch 50 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_50
+one epoch time: 152.5026731491089
+epoch: 51
+train auc: 0.9980069277015567
+test auc: 0.7625466514960877
+one epoch time: 153.28503322601318
+epoch: 52
+train auc: 0.9983224329764145
+test auc: 0.7607606708661446
+one epoch time: 152.32724285125732
+epoch: 53
+train auc: 0.9984805703640521
+test auc: 0.7609688449259758
+one epoch time: 152.41574931144714
+epoch: 54
+train auc: 0.9981698612398291
+test auc: 0.7582972788359863
+one epoch time: 152.84279656410217
+epoch: 55
+train auc: 0.9989869058759371
+test auc: 0.7593933100389867
+one epoch time: 153.1929440498352
+epoch: 56
+train auc: 0.9988907140867351
+test auc: 0.7590101921104433
+one epoch time: 153.52069997787476
+epoch: 57
+train auc: 0.9992378982151966
+test auc: 0.7581042750431127
+one epoch time: 152.48959851264954
+epoch: 58
+train auc: 0.9992206462722211
+test auc: 0.7560504646197826
+one epoch time: 152.27941632270813
+epoch: 59
+train auc: 0.9992355865090494
+test auc: 0.7613344350987812
+one epoch time: 152.70119857788086
+epoch: 60
+train auc: 0.9993702756990769
+test auc: 0.76004702000972
+Model saved at epoch 60 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_60
+one epoch time: 152.4970724582672
+epoch: 61
+train auc: 0.9995862818430387
+test auc: 0.7614831839735916
+one epoch time: 152.59389328956604
+epoch: 62
+train auc: 0.9995445073568888
+test auc: 0.7623496763746876
+one epoch time: 152.6502242088318
+epoch: 63
+train auc: 0.9994860041402457
+test auc: 0.7598738659256885
+one epoch time: 152.74848246574402
+epoch: 64
+train auc: 0.9996065454626807
+test auc: 0.7592957611401797
+one epoch time: 152.58634161949158
+epoch: 65
+train auc: 0.9996020284637227
+test auc: 0.7590445273744282
+one epoch time: 153.3931279182434
+epoch: 66
+train auc: 0.9996158278127014
+test auc: 0.7601942113818324
+one epoch time: 156.05249786376953
+epoch: 67
+train auc: 0.9996141790306755
+test auc: 0.7608014068855133
+one epoch time: 154.51807141304016
+epoch: 68
+train auc: 0.999549777831796
+test auc: 0.7560735125395072
+one epoch time: 153.4119517803192
+epoch: 69
+train auc: 0.9996916048090534
+test auc: 0.7582638397644276
+one epoch time: 153.50546789169312
+epoch: 70
+train auc: 0.9997597555706421
+test auc: 0.7589078328944555
+Model saved at epoch 70 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_70
+one epoch time: 154.72286200523376
+epoch: 71
+train auc: 0.9996366174151581
+test auc: 0.7575108595813881
+one epoch time: 152.31301999092102
+epoch: 72
+train auc: 0.9997436000272454
+test auc: 0.7595309102453475
+one epoch time: 152.46112418174744
+epoch: 73
+train auc: 0.9997801291887558
+test auc: 0.758898547682211
+one epoch time: 152.25427961349487
+epoch: 74
+train auc: 0.9997728051374477
+test auc: 0.7590561709421773
+one epoch time: 152.31077337265015
+epoch: 75
+train auc: 0.9997586688400648
+test auc: 0.7600750533248362
+one epoch time: 152.45278978347778
+epoch: 76
+train auc: 0.9999216771229773
+test auc: 0.7617725180515863
+one epoch time: 152.62984371185303
+epoch: 77
+train auc: 0.9998477870485522
+test auc: 0.7637842811024137
+one epoch time: 152.70842218399048
+epoch: 78
+train auc: 0.9998808978921329
+test auc: 0.7627591271062195
+one epoch time: 152.3377022743225
+epoch: 79
+train auc: 0.9998207624068145
+test auc: 0.7623036949427824
+one epoch time: 155.0466718673706
+epoch: 80
+train auc: 0.9997295340745641
+test auc: 0.7635910900971956
+Model saved at epoch 80 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_80
+one epoch time: 153.53987312316895
+epoch: 81
+train auc: 0.9997966475913076
+test auc: 0.762245726720497
+one epoch time: 152.53068351745605
+epoch: 82
+train auc: 0.9998321473300863
+test auc: 0.760451797366434
+one epoch time: 152.10608196258545
+epoch: 83
+train auc: 0.9998955017237594
+test auc: 0.7577884304837472
+one epoch time: 152.19169330596924
+epoch: 84
+train auc: 0.9998808822479057
+test auc: 0.7611713540789433
+one epoch time: 152.39905071258545
+epoch: 85
+train auc: 0.999872241528475
+test auc: 0.7613639019750895
+one epoch time: 152.42348194122314
+epoch: 86
+train auc: 0.9998779990929098
+test auc: 0.7613952773772417
+one epoch time: 152.4015326499939
+epoch: 87
+train auc: 0.9998434154648573
+test auc: 0.7621616857123679
+one epoch time: 152.559223651886
+epoch: 88
+train auc: 0.9999159135833171
+test auc: 0.7655779807746652
+one epoch time: 152.52534365653992
+epoch: 89
+train auc: 0.9998303842582905
+test auc: 0.7617424626698065
+one epoch time: 152.38245749473572
+epoch: 90
+train auc: 0.9999068179319365
+test auc: 0.7641670904772784
+Model saved at epoch 90 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_90
+one epoch time: 152.7761037349701
+epoch: 91
+train auc: 0.9999153819511988
+test auc: 0.7646997373320669
+one epoch time: 152.49449729919434
+epoch: 92
+train auc: 0.9998819446430187
+test auc: 0.7640308570943761
+one epoch time: 152.91462063789368
+epoch: 93
+train auc: 0.9998930664390827
+test auc: 0.761183626888183
+one epoch time: 152.55408811569214
+epoch: 94
+train auc: 0.9998254684401828
+test auc: 0.7625398754492914
+one epoch time: 152.76380515098572
+epoch: 95
+train auc: 0.9999195283775286
+test auc: 0.7622935603411978
+one epoch time: 152.89236426353455
+epoch: 96
+train auc: 0.9999265649661648
+test auc: 0.7637966457843779
+one epoch time: 152.39938735961914
+epoch: 97
+train auc: 0.999855306326777
+test auc: 0.7654310130172972
+one epoch time: 152.32037496566772
+epoch: 98
+train auc: 0.9999460799986789
+test auc: 0.7623406763145786
+one epoch time: 152.77198815345764
+epoch: 99
+train auc: 0.9999071742726636
+test auc: 0.7621062838593026
+one epoch time: 152.35225749015808
+epoch: 100
+train auc: 0.9999494351421778
+test auc: 0.7633039132947799
+Model saved at epoch 100 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_100
+one epoch time: 152.9929118156433
+epoch: 101
+train auc: 0.999900065492438
+test auc: 0.7613818743601455
+one epoch time: 148.1074924468994
+epoch: 102
+train auc: 0.9999503617910291
+test auc: 0.7631443815089702
+one epoch time: 143.00217390060425
+epoch: 103
+train auc: 0.9999130901262567
+test auc: 0.7624314110307413
+one epoch time: 142.38857865333557
+epoch: 104
+train auc: 0.9998607233576722
+test auc: 0.7648936624523573
+one epoch time: 142.6893196105957
+epoch: 105
+train auc: 0.9999410896532124
+test auc: 0.762912590958591
+one epoch time: 142.73534488677979
+epoch: 106
+train auc: 0.9998934408684472
+test auc: 0.7603078622756996
+one epoch time: 142.4509494304657
+epoch: 107
+train auc: 0.9999218443749742
+test auc: 0.7603966901994663
+one epoch time: 142.87764954566956
+epoch: 108
+train auc: 0.9999107248603599
+test auc: 0.7614824801938527
+one epoch time: 142.68507313728333
+epoch: 109
+train auc: 0.9998796030607436
+test auc: 0.7599988752351691
+one epoch time: 142.8480143547058
+epoch: 110
+train auc: 0.999930460813261
+test auc: 0.7612766480217733
+Model saved at epoch 110 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_110
+one epoch time: 143.05007410049438
+epoch: 111
+train auc: 0.9998709141592662
+test auc: 0.759143988265974
+one epoch time: 142.57229852676392
+epoch: 112
+train auc: 0.9999512097298632
+test auc: 0.7612518233182253
+one epoch time: 142.51695322990417
+epoch: 113
+train auc: 0.9999346382021237
+test auc: 0.7603769626986823
+one epoch time: 142.56187081336975
+epoch: 114
+train auc: 0.9999285217439109
+test auc: 0.7615382868069402
+one epoch time: 142.90143704414368
+epoch: 115
+train auc: 0.9999509810960032
+test auc: 0.7625017933382485
+one epoch time: 142.9868507385254
+epoch: 116
+train auc: 0.9999488578267436
+test auc: 0.7636395832947208
+one epoch time: 142.39070081710815
+epoch: 117
+train auc: 0.9998963814942499
+test auc: 0.7632303397101811
+one epoch time: 146.58565068244934
+epoch: 118
+train auc: 0.9999325672432483
+test auc: 0.7609891982013552
+one epoch time: 146.6122589111328
+epoch: 119
+train auc: 0.999880323672952
+test auc: 0.760423390493353
+one epoch time: 146.16298294067383
+epoch: 120
+train auc: 0.9999325925564768
+test auc: 0.7627000910801922
+Model saved at epoch 120 to 2024-12-01_12-47/lstm_psb_checkpoints_epoch_120
+one epoch time: 142.51343727111816
+epoch: 121
+train auc: 0.9999415620219567
+test auc: 0.7651017819085881
+one epoch time: 142.92463850975037
+epoch: 122
+train auc: 0.9999734699439822
+test auc: 0.7636591946545135
+one epoch time: 143.34247279167175
+epoch: 123
+train auc: 0.9999450017963781
+test auc: 0.76212611883384
+one epoch time: 146.06073379516602
+Early stopping triggered at epoch 123 with no improvement in AUC
+Best Model was at epoch 23
