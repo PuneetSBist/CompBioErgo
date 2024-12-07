@@ -1,0 +1,727 @@
+(TryCuda3_11) PS C:\Users\bistp\Downloads\CLass\CompBio\Project\Python\CompBioErgo>  C:\Users\bistp\anaconda3\envs\TryCuda3_11\python.exe C:\Users\bistp\Downloads\CLass\CompBio\Project\Python\CompBioErgo\proj_ergo.py
+Default Model
+Default Embedding
+Default HyperParam
+Default LossFunc
+Step LR params: step20, gamma:0.1
+Using Training set proj_data\BAP\tcr_split\train.csv and test proj_data\BAP\tcr_split\test.csv
+should enbale GPU?  True
+epoch: 1
+train auc: 0.6410546874413724
+test auc: 0.6396281312105312
+Best Model saved at epoch 1 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 142.24742150306702
+epoch: 2
+train auc: 0.6687023791528098
+test auc: 0.6673609913154342
+Best Model saved at epoch 2 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.48902487754822
+epoch: 3
+train auc: 0.6842018503282328
+test auc: 0.683969952203787
+Best Model saved at epoch 3 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.0833728313446
+epoch: 4
+train auc: 0.6895131808949313
+test auc: 0.6895206361358972
+Best Model saved at epoch 4 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 157.96715140342712
+epoch: 5
+train auc: 0.6995657885574519
+test auc: 0.6996012919634822
+Best Model saved at epoch 5 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 157.18059301376343
+epoch: 6
+train auc: 0.7065636168285696
+test auc: 0.7059515459506562
+Best Model saved at epoch 6 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 150.93924760818481
+epoch: 7
+train auc: 0.7127643866154723
+test auc: 0.712700410554591
+Best Model saved at epoch 7 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.76353001594543
+epoch: 8
+train auc: 0.72028469399142
+test auc: 0.7194434135053557
+Best Model saved at epoch 8 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 155.64829897880554
+epoch: 9
+train auc: 0.7215325651047695
+test auc: 0.720879654607647
+Best Model saved at epoch 9 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.56326937675476
+epoch: 10
+train auc: 0.72479390875159
+test auc: 0.7242491457171373
+Best Model saved at epoch 10 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 10 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_10
+one epoch time: 155.41529035568237
+epoch: 11
+train auc: 0.7275925454308612
+test auc: 0.7268218186196808
+Best Model saved at epoch 11 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.72996425628662
+epoch: 12
+train auc: 0.7289806958837153
+test auc: 0.7276343331949418
+Best Model saved at epoch 12 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.64012145996094
+epoch: 13
+train auc: 0.724995145387215
+test auc: 0.7240328903244424
+one epoch time: 159.3987066745758
+epoch: 14
+train auc: 0.7345147623280166
+test auc: 0.7342317412788638
+Best Model saved at epoch 14 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 155.96796202659607
+epoch: 15
+train auc: 0.7369011310919016
+test auc: 0.735953407534738
+Best Model saved at epoch 15 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 156.2457492351532
+epoch: 16
+train auc: 0.7393081420874514
+test auc: 0.7375228016834883
+Best Model saved at epoch 16 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.03251719474792
+epoch: 17
+train auc: 0.7396093054628452
+test auc: 0.7376498642616898
+Best Model saved at epoch 17 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 156.7542097568512
+epoch: 18
+train auc: 0.7396779951897836
+test auc: 0.7376629041215068
+Best Model saved at epoch 18 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.83813428878784
+epoch: 19
+train auc: 0.7463900381977324
+test auc: 0.7444000185506633
+Best Model saved at epoch 19 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.012268781662
+epoch: 20
+train auc: 0.7473997911929167
+test auc: 0.7462712336674304
+Best Model saved at epoch 20 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 20 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_20
+one epoch time: 153.8778121471405
+epoch: 21
+train auc: 0.7502890641139008
+test auc: 0.7483871699871931
+Best Model saved at epoch 21 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 181.2500879764557
+epoch: 22
+train auc: 0.7510130541715317
+test auc: 0.7487541035819136
+Best Model saved at epoch 22 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 160.19752097129822
+epoch: 23
+train auc: 0.7517600478156673
+test auc: 0.7492579916737518
+Best Model saved at epoch 23 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 160.91059851646423
+epoch: 24
+train auc: 0.7521960708379791
+test auc: 0.7496566664280749
+Best Model saved at epoch 24 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 156.03396940231323
+epoch: 25
+train auc: 0.7527556842860332
+test auc: 0.7499782721006478
+Best Model saved at epoch 25 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 158.8704571723938
+epoch: 26
+train auc: 0.7531538570787732
+test auc: 0.7504606472406401
+Best Model saved at epoch 26 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.43598198890686
+epoch: 27
+train auc: 0.7535184198249929
+test auc: 0.7508131403498565
+Best Model saved at epoch 27 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 166.32053303718567
+epoch: 28
+train auc: 0.7536291283704883
+test auc: 0.7508892213664561
+Best Model saved at epoch 28 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 166.1258008480072
+epoch: 29
+train auc: 0.7544789986689551
+test auc: 0.7514679181243314
+Best Model saved at epoch 29 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.74914264678955
+epoch: 30
+train auc: 0.7544845268933669
+test auc: 0.751471096400566
+Best Model saved at epoch 30 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 30 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_30
+one epoch time: 169.67174696922302
+epoch: 31
+train auc: 0.75529238853116
+test auc: 0.7520034234342664
+Best Model saved at epoch 31 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 157.4546549320221
+epoch: 32
+train auc: 0.7553215927179182
+test auc: 0.7518281952801424
+one epoch time: 163.4079234600067
+epoch: 33
+train auc: 0.7559057268079388
+test auc: 0.7525968752983914
+Best Model saved at epoch 33 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 166.40948915481567
+epoch: 34
+train auc: 0.7564746664424414
+test auc: 0.7528811173739649
+Best Model saved at epoch 34 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 156.7577645778656
+epoch: 35
+train auc: 0.755753648299067
+test auc: 0.7524317340760421
+one epoch time: 162.33125853538513
+epoch: 36
+train auc: 0.7573953218165064
+test auc: 0.7536288876801444
+Best Model saved at epoch 36 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 186.35944175720215
+epoch: 37
+train auc: 0.7574719232853517
+test auc: 0.753948936716743
+Best Model saved at epoch 37 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 160.50723266601562
+epoch: 38
+train auc: 0.7581686562106488
+test auc: 0.7543863800273718
+Best Model saved at epoch 38 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 167.87642765045166
+epoch: 39
+train auc: 0.7576917679142436
+test auc: 0.7539239317346411
+one epoch time: 171.60447764396667
+epoch: 40
+train auc: 0.7590087000333225
+test auc: 0.7550965847899026
+Best Model saved at epoch 40 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 40 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_40
+one epoch time: 168.75178718566895
+epoch: 41
+train auc: 0.7590736335161633
+test auc: 0.7551441965293064
+Best Model saved at epoch 41 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 197.88706421852112
+epoch: 42
+train auc: 0.7591110709662863
+test auc: 0.7551814301177333
+Best Model saved at epoch 42 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 179.7145848274231
+epoch: 43
+train auc: 0.7591328270886448
+test auc: 0.7551918958078156
+Best Model saved at epoch 43 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 174.3965528011322
+epoch: 44
+train auc: 0.7591883438875291
+test auc: 0.7552252256721737
+Best Model saved at epoch 44 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 177.5405077934265
+epoch: 45
+train auc: 0.7592713793163479
+test auc: 0.7552590565028974
+Best Model saved at epoch 45 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 168.3318772315979
+epoch: 46
+train auc: 0.7592771458436212
+test auc: 0.7552855470496205
+Best Model saved at epoch 46 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 177.71833157539368
+epoch: 47
+train auc: 0.7593079126605163
+test auc: 0.7553114655586248
+Best Model saved at epoch 47 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 175.40533566474915
+epoch: 48
+train auc: 0.7594063562949689
+test auc: 0.7553528386199985
+Best Model saved at epoch 48 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 175.23250794410706
+epoch: 49
+train auc: 0.7594217742782445
+test auc: 0.7553909684008514
+Best Model saved at epoch 49 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 171.4559063911438
+epoch: 50
+train auc: 0.7595025270079205
+test auc: 0.7554120124551125
+Best Model saved at epoch 50 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 50 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_50
+one epoch time: 172.21004986763
+epoch: 51
+train auc: 0.7595325720175623
+test auc: 0.7554532927770379
+Best Model saved at epoch 51 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 176.3028061389923
+epoch: 52
+train auc: 0.7595808945361746
+test auc: 0.7554794583023298
+Best Model saved at epoch 52 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 175.02484130859375
+epoch: 53
+train auc: 0.7596282698728876
+test auc: 0.7555196690870658
+Best Model saved at epoch 53 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 176.363867521286
+epoch: 54
+train auc: 0.7596629388923459
+test auc: 0.7555496343295686
+Best Model saved at epoch 54 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 173.2289686203003
+epoch: 55
+train auc: 0.7597019430466232
+test auc: 0.7555827371122866
+Best Model saved at epoch 55 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 176.1201581954956
+epoch: 56
+train auc: 0.7597710030745888
+test auc: 0.7556150017730743
+Best Model saved at epoch 56 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 180.42611241340637
+epoch: 57
+train auc: 0.7598014131161948
+test auc: 0.7556485361842529
+Best Model saved at epoch 57 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 174.14104342460632
+epoch: 58
+train auc: 0.7598557091221672
+test auc: 0.755687405280521
+Best Model saved at epoch 58 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 180.89620637893677
+epoch: 59
+train auc: 0.7598867636733354
+test auc: 0.7557229790928395
+Best Model saved at epoch 59 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 184.16679096221924
+epoch: 60
+train auc: 0.759940459603696
+test auc: 0.7557553876297807
+Best Model saved at epoch 60 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 60 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_60
+one epoch time: 158.04347348213196
+epoch: 61
+train auc: 0.7599437378840657
+test auc: 0.7557595470373755
+Best Model saved at epoch 61 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 170.46819305419922
+epoch: 62
+train auc: 0.759946920941067
+test auc: 0.7557630971381272
+Best Model saved at epoch 62 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 155.11281204223633
+epoch: 63
+train auc: 0.7599498605347852
+test auc: 0.7557672998819127
+Best Model saved at epoch 63 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.778174161911
+epoch: 64
+train auc: 0.7599529007295741
+test auc: 0.755770252809955
+Best Model saved at epoch 64 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 154.0904152393341
+epoch: 65
+train auc: 0.7599562004664355
+test auc: 0.75577299512411
+Best Model saved at epoch 65 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.741455078125
+epoch: 66
+train auc: 0.7599597930979921
+test auc: 0.7557775263562219
+Best Model saved at epoch 66 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.08339428901672
+epoch: 67
+train auc: 0.7599635970895747
+test auc: 0.7557807566358854
+Best Model saved at epoch 67 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.38160681724548
+epoch: 68
+train auc: 0.7599668136621598
+test auc: 0.7557852757338639
+Best Model saved at epoch 68 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.17889261245728
+epoch: 69
+train auc: 0.7599708132065803
+test auc: 0.7557896934251559
+Best Model saved at epoch 69 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 148.97731232643127
+epoch: 70
+train auc: 0.7599753188526099
+test auc: 0.7557935000761573
+Best Model saved at epoch 70 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 70 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_70
+one epoch time: 154.9122598171234
+epoch: 71
+train auc: 0.7599786774726037
+test auc: 0.7557965292758955
+Best Model saved at epoch 71 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 146.25579738616943
+epoch: 72
+train auc: 0.759983580253855
+test auc: 0.7557996364807771
+Best Model saved at epoch 72 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 147.71613383293152
+epoch: 73
+train auc: 0.7599885645697761
+test auc: 0.7558037066158187
+Best Model saved at epoch 73 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.92828226089478
+epoch: 74
+train auc: 0.7599930940080675
+test auc: 0.7558076207405733
+Best Model saved at epoch 74 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 147.39831113815308
+epoch: 75
+train auc: 0.759997247061466
+test auc: 0.7558096428072368
+Best Model saved at epoch 75 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.41601967811584
+epoch: 76
+train auc: 0.7600013899569809
+test auc: 0.7558148665516781
+Best Model saved at epoch 76 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 147.76655268669128
+epoch: 77
+train auc: 0.7600055860320037
+test auc: 0.7558185050582591
+Best Model saved at epoch 77 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.34658241271973
+epoch: 78
+train auc: 0.7600096405484998
+test auc: 0.7558229262164463
+Best Model saved at epoch 78 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.5688066482544
+epoch: 79
+train auc: 0.760013942873898
+test auc: 0.7558261270275002
+Best Model saved at epoch 79 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.5596673488617
+epoch: 80
+train auc: 0.7600173169208378
+test auc: 0.7558291397594858
+Best Model saved at epoch 80 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 80 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_80
+one epoch time: 148.17706561088562
+epoch: 81
+train auc: 0.7600175582656321
+test auc: 0.7558293616407828
+Best Model saved at epoch 81 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 148.2079472541809
+epoch: 82
+train auc: 0.7600180630635556
+test auc: 0.7558299752812448
+Best Model saved at epoch 82 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.36564111709595
+epoch: 83
+train auc: 0.7600185174523029
+test auc: 0.7558300636870741
+Best Model saved at epoch 83 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 148.75025463104248
+epoch: 84
+train auc: 0.7600190857505783
+test auc: 0.7558301850284083
+Best Model saved at epoch 84 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 145.77103352546692
+epoch: 85
+train auc: 0.7600194903276722
+test auc: 0.7558305117832871
+Best Model saved at epoch 85 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 150.82227301597595
+epoch: 86
+train auc: 0.7600196046174421
+test auc: 0.755830705929422
+Best Model saved at epoch 86 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 147.74975275993347
+epoch: 87
+train auc: 0.7600202290828383
+test auc: 0.7558310777539392
+Best Model saved at epoch 87 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 148.73065853118896
+epoch: 88
+train auc: 0.7600207640284908
+test auc: 0.7558313455715985
+Best Model saved at epoch 88 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 159.18592596054077
+epoch: 89
+train auc: 0.7600211744721699
+test auc: 0.755831550985143
+Best Model saved at epoch 89 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 160.486802816391
+epoch: 90
+train auc: 0.7600218840030507
+test auc: 0.755831966145851
+Best Model saved at epoch 90 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 90 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_90
+one epoch time: 151.49784302711487
+epoch: 91
+train auc: 0.7600221751051782
+test auc: 0.7558326291895705
+Best Model saved at epoch 91 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 152.37238597869873
+epoch: 92
+train auc: 0.7600226750686009
+test auc: 0.7558329403434205
+Best Model saved at epoch 92 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 153.77363562583923
+epoch: 93
+train auc: 0.7600229718200326
+test auc: 0.7558334430432341
+Best Model saved at epoch 93 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.31583070755005
+epoch: 94
+train auc: 0.7600235162174056
+test auc: 0.7558335375161299
+Best Model saved at epoch 94 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 150.1702437400818
+epoch: 95
+train auc: 0.7600238247020077
+test auc: 0.7558338148677513
+Best Model saved at epoch 95 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 145.72629570960999
+epoch: 96
+train auc: 0.7600242544293694
+test auc: 0.755834274231374
+Best Model saved at epoch 96 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.86325097084045
+epoch: 97
+train auc: 0.7600245807853281
+test auc: 0.7558344328418323
+Best Model saved at epoch 97 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 149.25384306907654
+epoch: 98
+train auc: 0.7600252250776093
+test auc: 0.7558347717308445
+Best Model saved at epoch 98 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 151.02533793449402
+epoch: 99
+train auc: 0.760025713851064
+test auc: 0.7558350213473035
+Best Model saved at epoch 99 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 145.24987030029297
+epoch: 100
+train auc: 0.7600260899643558
+test auc: 0.7558356393213848
+Best Model saved at epoch 100 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 100 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_100
+one epoch time: 147.93246364593506
+epoch: 101
+train auc: 0.7600260793175901
+test auc: 0.7558356003188129
+one epoch time: 145.33390498161316
+epoch: 102
+train auc: 0.7600260806755961
+test auc: 0.7558355613162412
+one epoch time: 147.62526988983154
+epoch: 103
+train auc: 0.7600261014259249
+test auc: 0.7558354269740497
+one epoch time: 148.1950535774231
+epoch: 104
+train auc: 0.7600260919198842
+test auc: 0.7558356453884514
+Best Model saved at epoch 104 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 145.14831519126892
+epoch: 105
+train auc: 0.7600261495536513
+test auc: 0.7558356072526033
+one epoch time: 148.52044820785522
+epoch: 106
+train auc: 0.7600261401019308
+test auc: 0.7558354642431737
+one epoch time: 149.896892786026
+epoch: 107
+train auc: 0.7600261414056163
+test auc: 0.7558355197134979
+one epoch time: 148.2041473388672
+epoch: 108
+train auc: 0.7600261190800006
+test auc: 0.7558354469086974
+one epoch time: 150.2722508907318
+epoch: 109
+train auc: 0.7600262459177441
+test auc: 0.7558356176532892
+one epoch time: 145.17119026184082
+epoch: 110
+train auc: 0.7600262370092261
+test auc: 0.7558355465819363
+Model saved at epoch 110 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_110
+one epoch time: 149.79863357543945
+epoch: 111
+train auc: 0.7600262326092871
+test auc: 0.7558354677100689
+one epoch time: 150.9474709033966
+epoch: 112
+train auc: 0.7600262237550893
+test auc: 0.7558355041124694
+one epoch time: 152.72495126724243
+epoch: 113
+train auc: 0.7600262460807048
+test auc: 0.7558355821176128
+one epoch time: 148.44266486167908
+epoch: 114
+train auc: 0.7600263330473975
+test auc: 0.755835377570792
+one epoch time: 148.85952067375183
+epoch: 115
+train auc: 0.7600263043119945
+test auc: 0.7558356653230991
+Best Model saved at epoch 115 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 147.26548290252686
+epoch: 116
+train auc: 0.7600263579260642
+test auc: 0.7558355231803933
+one epoch time: 144.52876710891724
+epoch: 117
+train auc: 0.760026332884437
+test auc: 0.7558355500488316
+one epoch time: 152.35757756233215
+epoch: 118
+train auc: 0.7600262971417238
+test auc: 0.7558356115862226
+one epoch time: 148.70096230506897
+epoch: 119
+train auc: 0.7600263659111385
+test auc: 0.7558357268604902
+Best Model saved at epoch 119 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+one epoch time: 150.77344965934753
+epoch: 120
+train auc: 0.7600263470076974
+test auc: 0.7558357311941093
+Best Model saved at epoch 120 to 2024-12-05_19-46\lstm_psb_checkpoints_best
+Model saved at epoch 120 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_120
+one epoch time: 148.16857647895813
+epoch: 121
+train auc: 0.7600263608593568
+test auc: 0.7558356921915375
+one epoch time: 145.97680950164795
+epoch: 122
+train auc: 0.760026357165581
+test auc: 0.7558355708502031
+one epoch time: 150.71532893180847
+epoch: 123
+train auc: 0.7600263566766989
+test auc: 0.755835618520013
+one epoch time: 144.50271797180176
+epoch: 124
+train auc: 0.7600263404349492
+test auc: 0.7558356358544893
+one epoch time: 143.8507993221283
+epoch: 125
+train auc: 0.7600263409781516
+test auc: 0.7558356575225849
+one epoch time: 145.69444108009338
+epoch: 126
+train auc: 0.7600263504841923
+test auc: 0.7558356713901659
+one epoch time: 153.81984543800354
+epoch: 127
+train auc: 0.7600263289733802
+test auc: 0.7558356817908517
+one epoch time: 156.3459324836731
+epoch: 128
+train auc: 0.7600263209883059
+test auc: 0.755835628053975
+one epoch time: 149.9753360748291
+epoch: 129
+train auc: 0.7600263068650454
+test auc: 0.7558357095260138
+one epoch time: 154.85784554481506
+epoch: 130
+train auc: 0.7600262942627514
+test auc: 0.7558356661898229
+Model saved at epoch 130 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_130
+one epoch time: 148.95558166503906
+epoch: 131
+train auc: 0.7600263085489727
+test auc: 0.7558356315208703
+one epoch time: 146.71518993377686
+epoch: 132
+train auc: 0.7600263163167659
+test auc: 0.7558356653230991
+one epoch time: 152.01089692115784
+epoch: 133
+train auc: 0.7600263064848038
+test auc: 0.7558356124529463
+one epoch time: 146.16398739814758
+epoch: 134
+train auc: 0.7600263125143496
+test auc: 0.755835689591366
+one epoch time: 146.06910920143127
+epoch: 135
+train auc: 0.7600263122427484
+test auc: 0.7558356687899944
+one epoch time: 149.54358100891113
+epoch: 136
+train auc: 0.760026305126798
+test auc: 0.755835685257747
+one epoch time: 146.6921088695526
+epoch: 137
+train auc: 0.7600262901887339
+test auc: 0.7558356687899945
+one epoch time: 147.03589129447937
+epoch: 138
+train auc: 0.7600263130032316
+test auc: 0.7558356410548323
+one epoch time: 150.6608428955078
+epoch: 139
+train auc: 0.7600263323955547
+test auc: 0.7558356159198416
+one epoch time: 144.65364241600037
+epoch: 140
+train auc: 0.760026325931447
+test auc: 0.7558355630496889
+Model saved at epoch 140 to 2024-12-05_19-46\lstm_psb_checkpoints_epoch_140
+one epoch time: 147.04199123382568
+epoch: 141
+train auc: 0.7600263328301167
+test auc: 0.7558355569826222
+one epoch time: 149.56425714492798
+epoch: 142
+train auc: 0.7600263316893918
+test auc: 0.7558355353145265
+one epoch time: 157.036696434021
+epoch: 143
+train auc: 0.7600263316350715
+test auc: 0.7558355344478029
+one epoch time: 149.11261916160583
+epoch: 144
+train auc: 0.7600263319066727
+test auc: 0.7558355361812505
+one epoch time: 146.40736317634583
+epoch: 145
+train auc: 0.7600263321782739
+test auc: 0.7558355353145267
+one epoch time: 146.78870058059692
+epoch: 146
+train auc: 0.7600263318523525
+test auc: 0.7558355353145267
+one epoch time: 147.7335033416748
+epoch: 147
+train auc: 0.7600263331560381
+test auc: 0.7558355465819363
+one epoch time: 148.00909686088562
+epoch: 148
+train auc: 0.7600263346226844
+test auc: 0.7558355448484886
+one epoch time: 147.13434863090515
+epoch: 149
+train auc: 0.7600263335905999
+test auc: 0.7558355439817648
+one epoch time: 144.97370171546936
+epoch: 150
+one epoch time: 141.89151906967163
+Early stopping triggered at epoch 150 with no improvement in AUC
+Best Model was at epoch 120
+(TryCuda3_11) PS C:\Users\bistp\Downloads\CLass\CompBio\Project\Python\CompBioErgo>
+
+
+
+

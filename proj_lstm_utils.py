@@ -7,6 +7,7 @@ import numpy as np
 import torch.autograd as autograd
 from proj_ERGO_models import DoubleLSTMClassifier
 from sklearn.metrics import roc_auc_score, roc_curve
+from torch.optim.lr_scheduler import StepLR
 import os
 
 
@@ -165,6 +166,7 @@ def train_model(batches, test_batches, device, args, params):
     model.to(device)
     # We use Adam optimizer
     optimizer = optim.Adam(model.parameters(), lr=params['lr'], weight_decay=params['wd'])
+    scheduler = StepLR(optimizer, step_size=args['lr_step'], gamma=args['lr_gamma'])
 
     # Initialize early stopping variables
     best_auc = 0
@@ -216,6 +218,8 @@ def train_model(batches, test_batches, device, args, params):
         if epochs_without_improvement >= patience:
             print(f'Early stopping triggered at epoch {epoch + 1} with no improvement in AUC')
             break
+        # Step the scheduler at the end of each epoch to adjust the learning rate
+        scheduler.step()
     print(f"Best Model was at epoch {best_epoch + 1}")
     return model_best, best_auc, best_roc
 

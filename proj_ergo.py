@@ -137,9 +137,11 @@ def main(args):
     amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
     if args.model_type == 'lstm':
         amino_to_ix = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
+    """
     if args.model_type == 'ae':
         pep_atox = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
         tcr_atox = {amino: index for index, amino in enumerate(amino_acids + ['X'])}
+    """
 
     # hyper-params
     arg = {}
@@ -147,6 +149,8 @@ def main(args):
     arg['test_auc_file'] = args.test_auc_file if args.test_auc_file else 'ignore'
     arg['temp_model_path'] = args.temp_model_path if args.temp_model_path else 'ignore'
     arg['restore_epoch'] = int(args.restore_epoch) if args.restore_epoch else 0
+    arg['lr_step'] = int(args.lr_step)
+    arg['lr_gamma'] = float(args.lr_gamma)
 
     if args.temp_model_path == 'auto':
         dir = timestamp
@@ -176,15 +180,17 @@ def main(args):
     # Number of epochs to wait for improvement
     params['patience'] = 30
     # Save model per epoch in case of crash
-    params['model_save_occur'] = 10
+    params['model_save_occur'] = 20
     params['lstm_dim'] = 500
     params['emb_dim'] = 10
-    params['dropout'] = 0.1
+    params['dropout'] = 0.2
     params['option'] = 0
     params['enc_dim'] = 100
     params['train_ae'] = True
+    print('Params: ', params)
 
     # Load autoencoder params
+    """
     if args.model_type == 'ae':
         args.ae_file = 'TCR_Autoencoder/tcr_ae_dim_' + str(params['enc_dim']) + '.pt'
         arg['ae_file'] = args.ae_file
@@ -192,7 +198,6 @@ def main(args):
         params['max_len'] = checkpoint['max_len']
         params['batch_size'] = checkpoint['batch_size']
 
-    """
     # Load data
     if args.dataset == 'mcpas':
         datafile = r'data/McPAS-TCR.csv'
@@ -236,6 +241,7 @@ def main(args):
     if args.train_auc_file == 'auto' or args.model_file == 'auto' or args.test_auc_file == 'auto' or args.temp_model_path == 'auto':
         os.makedirs(timestamp, exist_ok=True)
 
+    """
     if args.model_type == 'ae':
         # train
         train_tcrs, train_peps, train_signs = ae_get_lists_from_pairs(train, params['max_len'])
@@ -246,6 +252,7 @@ def main(args):
         # Train the model
         model, best_auc, best_roc = ae.train_model(train_batches, test_batches, args.device, arg, params)
         pass
+    """
     if args.model_type == 'lstm':
         # train
         train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
@@ -539,24 +546,26 @@ def predict(args):
 
 
 if __name__ == '__main__':
-    debug = True
+    debug = False
 
     parser = argparse.ArgumentParser()
     if not debug:
         #train or predict
         parser.add_argument("function")
-        #lstm or ae (AutoEncoder)
-        parser.add_argument("model_type")
+        # ALways lstm
+        #parser.add_argument("model_type")
         #cpu or cuda or gpu etc
         parser.add_argument("device")
     parser.add_argument("--train_data_path")
     parser.add_argument("--test_data_path")
     #Save Model for train or load for predict
-    parser.add_argument("--model_file")
-    parser.add_argument("--train_auc_file")
-    parser.add_argument("--test_auc_file")
-    parser.add_argument("--temp_model_path")
-    parser.add_argument("--restore_epoch")
+    parser.add_argument("--model_file", default='auto' )
+    parser.add_argument("--train_auc_file", default='auto' )
+    parser.add_argument("--test_auc_file", default='auto' )
+    parser.add_argument("--temp_model_path", default='auto' )
+    parser.add_argument("--restore_epoch", default=0)
+    parser.add_argument("--lr_step", default=25)
+    parser.add_argument("--lr_gamma", default=1.0)
     parser.add_argument("--roc_file")
     """
     parser.add_argument("sampling")
@@ -568,15 +577,15 @@ if __name__ == '__main__':
     """
     args = parser.parse_args()
 
+    args.model_type = 'lstm'
+
     if debug:
         args.function = 'train'
-        args.model_type = 'lstm'
-        args.device = 'cpu'
+        #args.device = 'cpu'
         args.device = 'cuda'
-        enable_cuda(no_cuda=False)
         """
-        args.train_data_path = 'data\\BAP\\tcr_split\\train.csv'
-        args.test_data_path = 'data\\BAP\\tcr_split\\test.csv'
+        args.train_data_path = 'proj_data\\BAP\\tcr_split\\train.csv'
+        args.test_data_path = 'proj_data\\BAP\\tcr_split\\test.csv'
         """
         """
         args.train_data_path = '/home/pbist/AlgoCompBio/data/BAP/tcr_split/train.csv'
@@ -585,14 +594,16 @@ if __name__ == '__main__':
         """
         args.train_data_path = '/home/pbist/AlgoCompBio/data/BAP/epi_split/train.csv'
         args.test_data_path = '/home/pbist/AlgoCompBio/data/BAP/epi_split/test.csv'
-        print("Using EPI split")
-        args.model_file = 'auto'
-        args.train_auc_file = 'auto'
-        args.test_auc_file = 'auto'
-        args.temp_model_path = 'auto'
-        args.restore_epoch = 0
         args.roc_file = "roc_file"
 
+    print('Default Model')
+    print('Default Embedding')
+    print('Default HyperParam')
+    print('Default LossFunc')
+    print(f'Step LR params: step{args.lr_step}, gamma:{args.lr_gamma}')
+    print(f'Using Training set {args.train_data_path} and test {args.test_data_path}')
+    if args.device == 'cuda':
+        enable_cuda(no_cuda=False)
     if args.function == 'train':
         main(args)
     """
