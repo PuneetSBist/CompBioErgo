@@ -35,20 +35,20 @@ def lstm_get_lists_from_pairs(pairs):
     tcrs = []
     peps = []
     signs = []
-    # for pair in pairs:
-    #     tcr, pep, label = pair
+    for pair in pairs:
+        tcr, pep, label = pair
+        tcrs.append(tcr)
+        peps.append(pep)
+        signs.append(label)
+    # for i in range(50):
+    #     tcr, pep, label = pairs[i]
     #     tcrs.append(tcr)
     #     peps.append(pep)
     #     signs.append(label)
-    for i in range(50):
-        tcr, pep, label = pairs[i]
-        tcrs.append(tcr)
-        peps.append(pep)
-        signs.append(label)
-        tcr, pep, label = pairs[len(pairs) - i-1]
-        tcrs.append(tcr)
-        peps.append(pep)
-        signs.append(label)
+    #     tcr, pep, label = pairs[len(pairs) - i-1]
+    #     tcrs.append(tcr)
+    #     peps.append(pep)
+    #     signs.append(label)
     return tcrs, peps, signs
 
 
