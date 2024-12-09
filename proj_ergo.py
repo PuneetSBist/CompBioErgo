@@ -13,6 +13,8 @@ from datetime import datetime
 from collections import Counter
 #import matplotlib.pyplot as plt
 from proj_utils import enable_cuda
+from joblib import dump
+
 
 
 def ae_get_lists_from_pairs(pairs, max_len):
@@ -33,8 +35,17 @@ def lstm_get_lists_from_pairs(pairs):
     tcrs = []
     peps = []
     signs = []
-    for pair in pairs:
-        tcr, pep, label = pair
+    # for pair in pairs:
+    #     tcr, pep, label = pair
+    #     tcrs.append(tcr)
+    #     peps.append(pep)
+    #     signs.append(label)
+    for i in range(50):
+        tcr, pep, label = pairs[i]
+        tcrs.append(tcr)
+        peps.append(pep)
+        signs.append(label)
+        tcr, pep, label = pairs[len(pairs) - i-1]
         tcrs.append(tcr)
         peps.append(pep)
         signs.append(label)
@@ -135,7 +146,7 @@ def main(args):
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
     # Word to index dictionary
     amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
-    if args.model_type == 'lstm':
+    if args.model_type == 'lstm' or args.model_type == 'svm' or args.model_type == 'rf':
         amino_to_ix = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
     """
     if args.model_type == 'ae':
@@ -175,7 +186,8 @@ def main(args):
     params = {}
     params['lr'] = 1e-4
     params['wd'] = 0
-    params['epochs'] = 200 - arg['restore_epoch']
+    #params['epochs'] = 200 - arg['restore_epoch']
+    params['epochs'] = 1 - arg['restore_epoch']
     params['batch_size'] = 32
     # Number of epochs to wait for improvement
     params['patience'] = 30
@@ -266,24 +278,60 @@ def main(args):
         model, best_auc, best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params)
         pass
 
+    if args.model_type == 'svm':
+        print("SVM \n")
+        # train
+        train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
+        lstm.convert_data(train_tcrs, train_peps, amino_to_ix)
+        train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
+        # test
+        test_tcrs, test_peps, test_signs = lstm_get_lists_from_pairs(test)
+        lstm.convert_data(test_tcrs, test_peps, amino_to_ix)
+        test_batches = lstm.get_batches(test_tcrs, test_peps, test_signs, params['batch_size'])
+        model_path = args.temp_model_path
+        # Train the model
+        model, best_auc, best_roc = lstm.Svm_Classifier(train_batches, test_batches, args.device, model_path, params)
+        pass
+    
+    if args.model_type == 'rf':
+        print("RF \n")
+        # train
+        train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
+        lstm.convert_data(train_tcrs, train_peps, amino_to_ix)
+        train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
+        # test
+        test_tcrs, test_peps, test_signs = lstm_get_lists_from_pairs(test)
+        lstm.convert_data(test_tcrs, test_peps, amino_to_ix)
+        test_batches = lstm.get_batches(test_tcrs, test_peps, test_signs, params['batch_size'])
+        model_path = args.temp_model_path
+        # Train the model
+        model, best_auc, best_roc = lstm.Random_forrest_Classifier(train_batches, test_batches, args.device, model_path, params)
+        pass
+
 
     # Save trained model
-    if args.model_file == 'auto':
-        dir = timestamp
-        args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model.pt']))
+    ##SVM AND RF ARE SAVED IN A DIFFERENT WAY
+    if args.model_type == "svm":
+        dump(model, "svm_model.joblib")
+    elif args.model_type == "rf":
+        dump(model, "rf_model.joblib")
+    elif args.model_type == "lstm": 
+        if args.model_file == 'auto':
+            dir = timestamp
+            args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model.pt']))
 
-        #p_key = 'protein' if args.protein else ''
-        #args.model_file = dir + '/' + '_'.join([args.model_type, args.dataset, args.sampling, p_key, 'model.pt'])
-    if args.model_file:
-        torch.save({
-                    'model_state_dict': model.state_dict(),
-                    'params': params
-                    }, args.model_file)
-    
-    if args.roc_file:
-        # Save best ROC curve and AUC
-        np.savez(args.roc_file, fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
-    pass
+            #p_key = 'protein' if args.protein else ''
+            #args.model_file = dir + '/' + '_'.join([args.model_type, args.dataset, args.sampling, p_key, 'model.pt'])
+        if args.model_file:
+            torch.save({
+                        'model_state_dict': model.state_dict(),
+                        'params': params
+                        }, args.model_file)
+        
+        if args.roc_file:
+            # Save best ROC curve and AUC
+            np.savez(args.roc_file, fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
+        pass
     
 
 
@@ -577,7 +625,8 @@ if __name__ == '__main__':
     """
     args = parser.parse_args()
 
-    args.model_type = 'lstm'
+    args.model_type = 'rf'
+    args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
 
     if debug:
         args.function = 'train'

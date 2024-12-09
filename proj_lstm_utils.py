@@ -9,7 +9,12 @@ from proj_ERGO_models import DoubleLSTMClassifier
 from sklearn.metrics import roc_auc_score, roc_curve
 from torch.optim.lr_scheduler import StepLR
 import os
-
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
+# import cuml
+# from cuml.svm import SVC
 
 """
 def get_lists_from_pairs(pairs):
@@ -26,6 +31,147 @@ def get_lists_from_pairs(pairs):
             signs.append(0.0)
     return tcrs, peps, signs
 """
+import numpy as np
+
+def extract_features(model_path,params, batches, device):
+    """
+    Extracts features using the LSTM layers of the trained model.
+    
+    Args:
+        model (nn.Module): The trained model with LSTM layers.
+        batches (list): List of data batches.
+        device (torch.device): The device (CPU/GPU) for computation.
+        
+    Returns:
+        np.ndarray: Feature matrix.
+        np.ndarray: Corresponding labels.
+    """
+    model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
+    if(device == "cuda"):
+        model.load_state_dict(torch.load(model_path))
+    else:
+        state_dict = torch.load(model_path, map_location=torch.device('cpu'))
+        model.load_state_dict(state_dict['model_state_dict'])
+
+# Load the state dictionary into the model
+
+
+    # Move the model to the appropriate device (e.g., GPU or CPU)
+    model.to(device)
+    model.eval()
+    features, labels = [], []
+    with torch.no_grad():
+        for batch in batches:
+            padded_tcrs, tcr_lens, padded_peps, pep_lens, batch_signs = batch
+            padded_tcrs, tcr_lens = padded_tcrs.to(device), tcr_lens.to(device)
+            padded_peps, pep_lens = padded_peps.to(device), pep_lens.to(device)
+
+            # Extract features
+            feature_batch = model(padded_tcrs, tcr_lens, padded_peps, pep_lens, extract_features=True)
+            features.append(feature_batch.cpu().numpy())
+            labels.extend(batch_signs)
+    
+    return np.vstack(features), np.array(labels)
+
+def train_svm(features, labels,device, kernel='rbf', C=1.0, gamma='scale'):
+    """
+    Trains an SVM classifier on the provided features and labels.
+    
+    Args:
+        features (np.ndarray): Feature matrix.
+        labels (np.ndarray): Labels corresponding to the features.
+        kernel (str): Kernel type for SVM.
+        C (float): Regularization parameter.
+        gamma (str): Kernel coefficient.
+    
+    Returns:
+        SVC: Trained SVM model.
+        StandardScaler: Scaler used for normalization.
+    """
+    # Normalize the features
+    scaler = StandardScaler()
+    features = scaler.fit_transform(features)
+
+    # Initialize and train SVM
+    if(device == "cuda"):
+        from cuml.svm import SVC as cuSVC
+        print("Using GPU-accelerated SVM (cuML).")
+        svm = cuSVC(kernel='rbf', C=1.0, gamma='scale', probability=True)
+    else:
+        svm = SVC(kernel=kernel, C=C, gamma=gamma, probability=True)
+
+    svm.fit(features, labels)
+    print("SVM training completed.")
+    return svm, scaler
+
+def evaluate_svm(svm, scaler, features, labels):
+    """
+    Evaluates the trained SVM on test features and labels.
+    
+    Args:
+        svm (SVC): Trained SVM model.
+        scaler (StandardScaler): Scaler used for feature normalization.
+        features (np.ndarray): Test feature matrix.
+        labels (np.ndarray): Test labels.
+    
+    Returns:
+        float: Accuracy of the SVM.
+        float: ROC AUC score of the SVM.
+    """
+    # Normalize features
+    features = scaler.transform(features)
+
+    # Predict and evaluate
+    predictions = svm.predict(features)
+    accuracy = accuracy_score(labels, predictions)
+    roc_auc = roc_auc_score(labels, svm.predict_proba(features)[:, 1])
+    print(f"Accuracy: {accuracy * 100:.2f}%")
+    print(f"ROC AUC: {roc_auc:.4f}")
+    return accuracy, roc_auc
+
+def Svm_Classifier(batches, test_batches, device, model_path, params):
+    print("Extracting training data \n")
+    x_train, y_train = extract_features(model_path, params, batches, device)
+    print("Extracting test data \n")
+    X_test, y_test = extract_features(model_path, params, test_batches, device)
+    print("training")
+    svm, scaler = train_svm(x_train, y_train,  device, kernel='rbf', C=1.0, gamma='scale')
+    print("evaluating")
+# Evaluate the SVM
+    accuracy, roc_auc = evaluate_svm(svm, scaler, X_test, y_test)
+    # print(f"LSTM Embedding given by best model ")
+    # print(accuracy)
+    # print(roc_auc)
+
+    return svm, accuracy, roc_auc
+
+def Random_forrest_Classifier(batches, test_batches, device, model_path, params):
+    print("Extracting training data \n")
+    x_train, y_train = extract_features(model_path, params, batches, device)
+    print("Extracting test data \n")
+    X_test, y_test = extract_features(model_path, params, test_batches, device)
+    print("training")
+    if (device == "cuda"):
+        from cuml.ensemble import RandomForestClassifier as cuRF
+        print("Using GPU-accelerated Random Forest.")
+        rfc = cuRF(n_estimators=100, max_depth=10, random_state=42, handle='device')
+    else:
+        rfc = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)  # Higher weight for positive class
+    
+    rfc.fit(x_train, y_train)
+    print("Random Forest training completed.")
+    y_pred = rfc.predict(X_test)
+    y_prob = rfc.predict_proba(X_test)[:, 1]
+
+    # Classification report
+    print(classification_report(y_test, y_pred, target_names=['Negative', 'Positive']))
+    accuracy = accuracy_score(y_test, y_pred)
+    # ROC-AUC
+    roc_auc = roc_auc_score(y_test, y_prob)
+    print(f"ROC-AUC: {roc_auc:.4f}")
+    return rfc, accuracy, roc_auc
+
+
 
 
 def convert_data(tcrs, peps, amino_to_ix):
@@ -221,6 +367,17 @@ def train_model(batches, test_batches, device, args, params):
         # Step the scheduler at the end of each epoch to adjust the learning rate
         scheduler.step()
     print(f"Best Model was at epoch {best_epoch + 1}")
+    # X_train, y_train = extract_features(model, train_batches, device)
+    x_train, y_train = extract_features(model_best, batches, device)
+    X_test, y_test = extract_features(model_best, test_batches, device)
+    svm, scaler = train_svm(x_train, y_train, kernel='rbf', C=1.0, gamma='scale')
+
+# Evaluate the SVM
+    # accuracy, roc_auc = evaluate_svm(svm, scaler, X_test, y_test)
+    # print(f"LSTM Embedding given by best model ")
+    # print(accuracy)
+    # print(roc_auc)
+
     return model_best, best_auc, best_roc
 
 
