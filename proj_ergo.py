@@ -277,53 +277,54 @@ def main(args):
         # train
         train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
         lstm.convert_data(train_tcrs, train_peps, amino_to_ix)
-        #train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
 
         # test
         test_tcrs, test_peps, test_signs = lstm_get_lists_from_pairs(test)
         lstm.convert_data(test_tcrs, test_peps, amino_to_ix)
         test_batches = lstm.get_batches(test_tcrs, test_peps, test_signs, params['batch_size'])
 
-        # Train the model
-        #model, best_auc, best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params)
-        # Initialize the KFold cross-validator
-        kf = KFold(n_splits=arg['kfold'] if arg['kfold'] > 1 else 5, shuffle=True, random_state=42)  # Set shuffle=True for randomness
+        if arg['kfold'] > 1:
+            # Initialize the KFold cross-validator
+            kf = KFold(n_splits=arg['kfold'] if arg['kfold'] > 1 else 5, shuffle=True, random_state=42)  # Set shuffle=True for randomness
         
-        for fold, (train_idx, val_idx) in enumerate(kf.split(train_tcrs), 1):
-            # Split the data into training and validation sets based on the current fold
-            train_tcrs_fold = [train_tcrs[i] for i in train_idx]
-            train_peps_fold = [train_peps[i] for i in train_idx]
-            train_signs_fold = [train_signs[i] for i in train_idx]
+            for fold, (train_idx, val_idx) in enumerate(kf.split(train_tcrs), 1):
+                # Split the data into training and validation sets based on the current fold
+                train_tcrs_fold = [train_tcrs[i] for i in train_idx]
+                train_peps_fold = [train_peps[i] for i in train_idx]
+                train_signs_fold = [train_signs[i] for i in train_idx]
 
-            val_tcrs_fold = [train_tcrs[i] for i in val_idx]
-            val_peps_fold = [train_peps[i] for i in val_idx]
-            val_signs_fold = [train_signs[i] for i in val_idx]
+                val_tcrs_fold = [train_tcrs[i] for i in val_idx]
+                val_peps_fold = [train_peps[i] for i in val_idx]
+                val_signs_fold = [train_signs[i] for i in val_idx]
 
-            # Create batches for training and validation data
-            train_batches = lstm.get_batches(train_tcrs_fold, train_peps_fold, train_signs_fold, params['batch_size'])
-            val_batches = lstm.get_batches(val_tcrs_fold, val_peps_fold, val_signs_fold, params['batch_size'])
+                # Create batches for training and validation data
+                train_batches = lstm.get_batches(train_tcrs_fold, train_peps_fold, train_signs_fold, params['batch_size'])
+                val_batches = lstm.get_batches(val_tcrs_fold, val_peps_fold, val_signs_fold, params['batch_size'])
 
-            # Train the model on this fold's training data and evaluate on validation data
-            model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
-            if arg['kfold'] == 1:
-                break
+                # Train the model on this fold's training data and evaluate on validation data
+                model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
+                if arg['kfold'] == 1:
+                    break
 
-            # Save trained model
-            if args.model_file == 'auto':
-                dir = timestamp
-                args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model']))
+                # Save trained model
+                if args.model_file == 'auto':
+                    dir = timestamp
+                    args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model']))
 
-            if args.model_file:
-                torch.save({
-                    'model_state_dict': model.state_dict(),
-                    'params': params,
-                    'best_threshold': test_thresh
-                }, args.model_file+'_fold_'+str(fold)+'.pt')
+                if args.model_file:
+                    torch.save({
+                        'model_state_dict': model.state_dict(),
+                        'params': params,
+                        'best_threshold': test_thresh
+                    }, args.model_file+'_fold_'+str(fold)+'.pt')
 
-            if args.roc_file:
-                # Save best ROC curve and AUC
-                np.savez(args.roc_file+'_fold_' + str(fold) , fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
-
+                if args.roc_file:
+                    # Save best ROC curve and AUC
+                    np.savez(args.roc_file+'_fold_' + str(fold) , fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
+        else:
+            train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
+            # Train the model
+            model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params, test_batches, 11)
         pass
 
     if args.model_type == 'svm':
@@ -370,13 +371,14 @@ def main(args):
 
             #p_key = 'protein' if args.protein else ''
             #args.model_file = dir + '/' + '_'.join([args.model_type, args.dataset, args.sampling, p_key, 'model.pt'])
-        if args.model_file:
+        if arg['kfold'] <= 1 and args.model_file:
             torch.save({
                         'model_state_dict': model.state_dict(),
-                        'params': params
+                        'params': params,
+                        'best_threshold': test_thresh
                         }, args.model_file)
         
-        if args.roc_file:
+        if arg['kfold'] <= 1 and args.roc_file:
             # Save best ROC curve and AUC
             np.savez(args.roc_file, fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
         pass
