@@ -9,13 +9,16 @@ import sklearn.model_selection as skl
 
 
 def read_data(csv_file):
+    all_pairs = []
+    if csv_file == "":
+        return all_pairs
+
     with open(csv_file, 'r', encoding='unicode_escape') as file:
         file.readline()
         reader = csv.reader(file)
 
         tcrs = set()
         peps = set()
-        all_pairs = []
         for line in reader:
             tcr, pep,label = line[1], line[0], float(line[2])
 
@@ -29,11 +32,14 @@ def read_data(csv_file):
     return all_pairs
 
 # PSB: For Project
-def load_data(pairs_file_train, pairs_file_test):
+def load_data(pairs_file_train, pairs_file_test, shuff=True):
     train = read_data(pairs_file_train)
     test = read_data(pairs_file_test)
 
-    random.shuffle(test)
+    if shuff and len(train):
+        random.shuffle(train)
+    if shuff and len(test):
+        random.shuffle(test)
     return train, test
 
 

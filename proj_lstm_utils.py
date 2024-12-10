@@ -6,13 +6,13 @@ import time
 import numpy as np
 import torch.autograd as autograd
 from proj_ERGO_models import DoubleLSTMClassifier
-from sklearn.metrics import roc_auc_score, roc_curve
 from torch.optim.lr_scheduler import StepLR
 import os
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
+from sklearn.metrics import precision_score, recall_score, f1_score, roc_curve
 # import cuml
 # from cuml.svm import SVC
 
@@ -278,8 +278,9 @@ def train_epoch(batches, model, loss_function, optimizer, device):
         probs = model(padded_tcrs, tcr_lens, padded_peps, pep_lens)
         # print(probs, batch_signs)
         # Compute loss
-        weights = batch_signs * 0.84 + (1-batch_signs) * 0.14
-        loss_function.weight = weights
+        #almost Balanced dataset: 1-95910 0-96087
+        #weights = batch_signs * 0.84 + (1-batch_signs) * 0.14
+        #loss_function.weight = weights
         #PSB
         probs = probs.squeeze()
         loss = loss_function(probs, batch_signs)
@@ -295,7 +296,7 @@ def train_epoch(batches, model, loss_function, optimizer, device):
     return total_loss / len(batches)
 
 
-def train_model(batches, test_batches, device, args, params):
+def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
     #Train and evaluate the model
     losses = []
     # We use Cross-Entropy loss
@@ -316,8 +317,10 @@ def train_model(batches, test_batches, device, args, params):
 
     # Initialize early stopping variables
     best_auc = 0
+    best_acc = 0
     best_roc = None
     best_epoch = 0
+    best_thresh = 0
     patience = params['patience']
     epochs_without_improvement = 0
 
@@ -330,25 +333,36 @@ def train_model(batches, test_batches, device, args, params):
         loss = train_epoch(batches, model, loss_function, optimizer, device)
         losses.append(loss)
         # Compute auc
-        train_auc = evaluate(model, batches, device)[0]
-        print('train auc:', train_auc)
-        with open(args['train_auc_file'], 'a+') as file:
+        #train_auc = evaluate(model, batches, device)[0]
+        #Use 0.5 threshold
+        train_auc, (train_acc, train_prec, train_recall, train_f1, train_thresh), train_roc = evaluate(model, batches, device, 0.5)
+        #Pick best threshold
+        #train_auc, (train_acc, train_prec, train_recall, train_f1, train_thresh), train_roc = evaluate(model, batches, device)
+        print (f"train_auc:{train_auc}, train_acc:{train_acc}, train_prec:{train_prec}, train_recall:{train_recall}, train_f1:{train_f1}, train_thresh:{train_thresh}")
+        #print('train auc:', train_auc)
+
+        with open(args['train_auc_file']+'_fold_'+str(kIdx), 'a+') as file:
             file.write(str(train_auc) + '\n')
 
-        test_auc, roc = evaluate(model, test_batches, device)
-        print('test auc:', test_auc)
-        with open(args['test_auc_file'], 'a+') as file:
-            file.write(str(test_auc) + '\n')
+        #val_auc, roc = evaluate(model, val_batches, device)
+        val_auc, (val_acc, val_prec, val_recall, val_f1, val_thresh), val_roc = evaluate(model, val_batches, device, train_thresh)
+        print (f"val_auc:{val_auc}, val_acc:{val_acc}, val_prec:{val_prec}, val_recall:{val_recall}, val_f1:{val_f1}, val_thresh:{val_thresh}")
+        #print('val auc:', val_auc)
+        with open(args['val_auc_file']+'_fold_'+str(kIdx), 'a+') as file:
+            file.write(str(val_auc) + '\n')
 
-        if test_auc > best_auc:
-            best_auc = test_auc
-            best_roc = roc
+        if val_acc > best_acc:
+        #if val_auc > best_auc:
+            best_auc = val_auc
+            best_acc = val_acc
+            best_roc = val_roc
+            best_thresh = train_thresh
             best_epoch = epoch  # Save the epoch with the best AUC
             epochs_without_improvement = 0  # Reset the counter
             model_best = model
             # Save best model checkpoint in case of crash(for recovery)
-            torch.save({'model_state_dict': model.state_dict()}, args['temp_model_path']+'_best')
-            print(f"Best Model saved at epoch {epoch + 1} to {args['temp_model_path']+'_best'}")
+            torch.save({'model_state_dict': model.state_dict()}, args['temp_model_path']+'_best.pt')
+            print(f"Best Model saved at epoch {epoch + 1} to {args['temp_model_path']+'_best.pt'} with thres{best_thresh}")
 
         else:
             epochs_without_improvement += 1
@@ -367,6 +381,7 @@ def train_model(batches, test_batches, device, args, params):
         # Step the scheduler at the end of each epoch to adjust the learning rate
         scheduler.step()
     print(f"Best Model was at epoch {best_epoch + 1}")
+    """
     # X_train, y_train = extract_features(model, train_batches, device)
     x_train, y_train = extract_features(model_best, batches, device)
     X_test, y_test = extract_features(model_best, test_batches, device)
@@ -377,11 +392,15 @@ def train_model(batches, test_batches, device, args, params):
     # print(f"LSTM Embedding given by best model ")
     # print(accuracy)
     # print(roc_auc)
+    """
 
-    return model_best, best_auc, best_roc
+    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model_best, test_batches, device, best_thresh)
+    print (f"kfold:{kIdx} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:{test_thresh}")
+    return model_best, test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc
+    #return model_best, best_auc, best_roc
 
 
-def evaluate(model, batches, device):
+def evaluate(model, batches, device, threshold=-1.0):
     model.eval()
     true = []
     scores = []
@@ -401,7 +420,23 @@ def evaluate(model, batches, device):
     # Return auc score
     auc = roc_auc_score(true, scores)
     fpr, tpr, thresholds = roc_curve(true, scores)
-    return auc, (fpr, tpr, thresholds)
+
+    # Find the threshold that maximizes Youden's index (TPR - FPR)
+    if threshold == -1.0:
+        youden_index = tpr - fpr
+        best_threshold_index = np.argmax(youden_index)
+        threshold = thresholds[best_threshold_index]
+
+    predicted_labels = (np.array(scores) >= threshold).astype(int)
+
+    # Calculate metrics
+    accuracy = accuracy_score(true, predicted_labels)
+    precision = precision_score(true, predicted_labels)
+    recall = recall_score(true, predicted_labels)
+    f1 = f1_score(true, predicted_labels)
+
+    return auc, (accuracy, precision, recall, f1, threshold), (fpr, tpr, thresholds)
+    #return auc, (fpr, tpr, thresholds)
 
 
 """

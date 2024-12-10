@@ -14,6 +14,7 @@ from collections import Counter
 #import matplotlib.pyplot as plt
 from proj_utils import enable_cuda
 from joblib import dump
+from sklearn.model_selection import KFold
 
 
 
@@ -157,15 +158,20 @@ def main(args):
     # hyper-params
     arg = {}
     arg['train_auc_file'] = args.train_auc_file if args.train_auc_file else 'ignore'
+    arg['val_auc_file'] = args.val_auc_file if args.val_auc_file else 'ignore'
     arg['test_auc_file'] = args.test_auc_file if args.test_auc_file else 'ignore'
     arg['temp_model_path'] = args.temp_model_path if args.temp_model_path else 'ignore'
     arg['restore_epoch'] = int(args.restore_epoch) if args.restore_epoch else 0
     arg['lr_step'] = int(args.lr_step)
+    arg['kfold'] = int(args.kfold)
     arg['lr_gamma'] = float(args.lr_gamma)
 
     if args.temp_model_path == 'auto':
         dir = timestamp
         arg['temp_model_path'] = os.path.join(dir, '_'.join([args.model_type, 'psb_checkpoints']))
+    if args.val_auc_file == 'auto':
+        dir = timestamp
+        arg['val_auc_file'] = os.path.join(dir, '_'.join([args.model_type, 'val_auc']))
     if args.train_auc_file == 'auto':
         dir = timestamp
         arg['train_auc_file'] = os.path.join(dir, '_'.join([args.model_type, 'train_auc']))
@@ -185,17 +191,19 @@ def main(args):
     arg['siamese'] = False
     params = {}
     params['lr'] = 1e-4
-    params['wd'] = 0
+    params['wd'] = 0    #L2 regularization
+    params['epochs'] = 100 #Original
     #params['epochs'] = 200 - arg['restore_epoch']
-    params['epochs'] = 1 - arg['restore_epoch']
-    params['batch_size'] = 32
+    params['batch_size'] = 50 #Original
+    #params['batch_size'] = 32
     # Number of epochs to wait for improvement
-    params['patience'] = 30
+    params['patience'] = 25
     # Save model per epoch in case of crash
-    params['model_save_occur'] = 20
+    params['model_save_occur'] = 30
     params['lstm_dim'] = 500
     params['emb_dim'] = 10
-    params['dropout'] = 0.2
+    #params['dropout'] = 0.2
+    params['dropout'] = 0.1 #Original
     params['option'] = 0
     params['enc_dim'] = 100
     params['train_ae'] = True
@@ -269,13 +277,53 @@ def main(args):
         # train
         train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
         lstm.convert_data(train_tcrs, train_peps, amino_to_ix)
-        train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
+        #train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
+
         # test
         test_tcrs, test_peps, test_signs = lstm_get_lists_from_pairs(test)
         lstm.convert_data(test_tcrs, test_peps, amino_to_ix)
         test_batches = lstm.get_batches(test_tcrs, test_peps, test_signs, params['batch_size'])
+
         # Train the model
-        model, best_auc, best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params)
+        #model, best_auc, best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params)
+        # Initialize the KFold cross-validator
+        kf = KFold(n_splits=arg['kfold'] if arg['kfold'] > 1 else 5, shuffle=True, random_state=42)  # Set shuffle=True for randomness
+        
+        for fold, (train_idx, val_idx) in enumerate(kf.split(train_tcrs), 1):
+            # Split the data into training and validation sets based on the current fold
+            train_tcrs_fold = [train_tcrs[i] for i in train_idx]
+            train_peps_fold = [train_peps[i] for i in train_idx]
+            train_signs_fold = [train_signs[i] for i in train_idx]
+
+            val_tcrs_fold = [train_tcrs[i] for i in val_idx]
+            val_peps_fold = [train_peps[i] for i in val_idx]
+            val_signs_fold = [train_signs[i] for i in val_idx]
+
+            # Create batches for training and validation data
+            train_batches = lstm.get_batches(train_tcrs_fold, train_peps_fold, train_signs_fold, params['batch_size'])
+            val_batches = lstm.get_batches(val_tcrs_fold, val_peps_fold, val_signs_fold, params['batch_size'])
+
+            # Train the model on this fold's training data and evaluate on validation data
+            model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
+            if arg['kfold'] == 1:
+                break
+
+            # Save trained model
+            if args.model_file == 'auto':
+                dir = timestamp
+                args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model']))
+
+            if args.model_file:
+                torch.save({
+                    'model_state_dict': model.state_dict(),
+                    'params': params,
+                    'best_threshold': test_thresh
+                }, args.model_file+'_fold_'+str(fold)+'.pt')
+
+            if args.roc_file:
+                # Save best ROC curve and AUC
+                np.savez(args.roc_file+'_fold_' + str(fold) , fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
+
         pass
 
     if args.model_type == 'svm':
@@ -532,20 +580,27 @@ def predict(args):
     amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
     if args.model_type == 'lstm':
         amino_to_ix = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
+    """
     if args.model_type == 'ae':
         pep_atox = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
         tcr_atox = {amino: index for index, amino in enumerate(amino_acids + ['X'])}
 
     # if args.ae_file == 'auto':
     args.ae_file = 'TCR_Autoencoder/tcr_ae_dim_100.pt'
+    """
     if args.model_file == 'auto':
+        return
+        """
         dir = 'models'
         p_key = 'protein' if args.protein else ''
         args.model_file = dir + '/' + '_'.join([args.model_type, args.dataset, args.sampling, p_key, 'model.pt'])
+        """
     if args.test_data_file == 'auto':
-        args.test_data_file = 'pairs_example.csv'
+        return
+        #args.test_data_file = 'pairs_example.csv'
 
     # Read test data
+    """
     tcrs = []
     peps = []
     signs = []
@@ -561,7 +616,14 @@ def predict(args):
             signs.append(0.0)
     tcrs_copy = tcrs.copy()
     peps_copy = peps.copy()
+    """
+    test_data_path = args.test_data_path
+    _, test = proj_data_loader.load_data("", test_data_path, False)
+    tcrs, peps, signs = lstm_get_lists_from_pairs(test)
+    tcrs_copy = tcrs.copy()
+    peps_copy = peps.copy()
 
+    """
     # Load model
     device = args.device
     if args.model_type == 'ae':
@@ -570,27 +632,38 @@ def predict(args):
         model.load_state_dict(checkpoint['model_state_dict'])
         model.to(device)
         model.eval()
+    """
     if args.model_type == 'lstm':
-        model = DoubleLSTMClassifier(10, 500, 0.1, device)
         checkpoint = torch.load(args.model_file, map_location=device)
+        best_threshold = checkpoint['best_threshold']
+        params = checkpoint['params']
+        model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
+        #model = DoubleLSTMClassifier(10, 500, 0.1, device)
         model.load_state_dict(checkpoint['model_state_dict'])
         model.to(device)
         model.eval()
         pass
 
     # Predict
-    batch_size = 50
+    batch_size = params['batch_size']
+    """
     if args.model_type == 'ae':
         test_batches = ae.get_full_batches(tcrs, peps, signs, tcr_atox, pep_atox, batch_size, max_len)
         preds = ae.predict(model, test_batches, device)
+    """
     if args.model_type == 'lstm':
         lstm.convert_data(tcrs, peps, amino_to_ix)
-        test_batches = lstm.get_full_batches(tcrs, peps, signs, batch_size, amino_to_ix)
-        preds = lstm.predict(model, test_batches, device)
-
+        #test_batches = lstm.get_full_batches(tcrs, peps, signs, batch_size, amino_to_ix)
+        test_batches = lstm.get_batches(tcrs, peps, signs, params['batch_size'])
+        #preds = lstm.predict(model, test_batches, device, best_threshold)
+    #TODO: change so that without label we also provide the probality
+    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model, test_batches, device, best_threshold)
+    print (f"Predict:{args.test_data_path} using mode:{args.model_file} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:{test_thresh}")
+    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model, test_batches, device, 0.5)
+    print (f"Predict:{args.test_data_path} using mode:{args.model_file} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:0.5")
     # Print predictions
-    for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
-        print('\t'.join([tcr, pep, str(pred)]))
+    #for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
+    #    print('\t'.join([tcr, pep, str(pred)]))
 
 
 if __name__ == '__main__':
@@ -607,12 +680,14 @@ if __name__ == '__main__':
     parser.add_argument("--train_data_path")
     parser.add_argument("--test_data_path")
     #Save Model for train or load for predict
+    parser.add_argument("--kfold", default=1)
     parser.add_argument("--model_file", default='auto' )
     parser.add_argument("--train_auc_file", default='auto' )
+    parser.add_argument("--val_auc_file", default='auto' )
     parser.add_argument("--test_auc_file", default='auto' )
     parser.add_argument("--temp_model_path", default='auto' )
     parser.add_argument("--restore_epoch", default=0)
-    parser.add_argument("--lr_step", default=25)
+    parser.add_argument("--lr_step", default=5)
     parser.add_argument("--lr_gamma", default=1.0)
     parser.add_argument("--roc_file")
     """
@@ -647,21 +722,22 @@ if __name__ == '__main__':
 
     print('Default Model')
     print('Default Embedding')
-    print('Default HyperParam')
     print('Default LossFunc')
+    print('Original Without EarlySTopping')
     print(f'Step LR params: step{args.lr_step}, gamma:{args.lr_gamma}')
+    print(f'kfold: {args.kfold}')
     print(f'Using Training set {args.train_data_path} and test {args.test_data_path}')
     if args.device == 'cuda':
         enable_cuda(no_cuda=False)
     if args.function == 'train':
         main(args)
+    elif args.function == 'predict':
+        predict(args)
     """
     elif args.function == 'test' and not args.protein:
         pep_test(args)
     elif args.function == 'test' and args.protein:
         protein_test(args)
-    elif args.function == 'predict':
-        predict(args)
     """
 
 # example
