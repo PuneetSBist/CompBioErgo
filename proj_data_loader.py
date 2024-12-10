@@ -8,7 +8,7 @@ import sklearn.model_selection as skl
 # todo count how many TCRs and peps there are in each set (for TN FN TP FP tables)
 
 
-def read_data(csv_file):
+def read_data(csv_file, is_predict=False):
     all_pairs = []
     if csv_file == "":
         return all_pairs
@@ -20,7 +20,7 @@ def read_data(csv_file):
         tcrs = set()
         peps = set()
         for line in reader:
-            tcr, pep,label = line[1], line[0], float(line[2])
+            tcr, pep,label = line[1], line[0], float(line[2]) if is_predict == False else 0.0
 
             # Proper tcr and peptides
             if any(att == 'NA' or att == "" for att in [tcr, pep]):
@@ -30,6 +30,13 @@ def read_data(csv_file):
                 continue
             all_pairs.append((tcr, pep, label))
     return all_pairs
+
+# PSB: For Project
+def load_data_predict(pairs_file_test, shuff=True):
+    test = read_data(pairs_file_test, True)
+    if shuff and len(test):
+        random.shuffle(test)
+    return test
 
 # PSB: For Project
 def load_data(pairs_file_train, pairs_file_test, shuff=True):

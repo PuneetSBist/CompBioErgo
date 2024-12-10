@@ -205,7 +205,6 @@ def get_batches(tcrs, peps, signs, batch_size):
     return batches
 
 
-"""
 def get_full_batches(tcrs, peps, signs, batch_size, amino_to_ix):
     #Get batches from the data, including last with padding
     # Initialization
@@ -243,7 +242,6 @@ def get_full_batches(tcrs, peps, signs, batch_size, amino_to_ix):
     return batches
     pass
 
-"""
 
 def pad_batch(seqs):
     #Pad a batch of sequences (part of the way to use RNN batching in PyTorch)
@@ -472,6 +470,7 @@ def evaluate_full(model, batches, device):
     auc = roc_auc_score(true, scores)
     fpr, tpr, thresholds = roc_curve(true, scores)
     return auc, (fpr, tpr, thresholds)
+"""
 
 
 def predict(model, batches, device):
@@ -488,7 +487,7 @@ def predict(model, batches, device):
         probs = model(padded_tcrs, tcr_lens, padded_peps, pep_lens)
         preds.extend([t[0] for t in probs.cpu().data.tolist()])
         batch_size = len(tcr_lens)
-        assert batch_size == 50
+        #assert batch_size == 50
         index += batch_size
     border = pep_lens[-1]
     if any(k != border for k in pep_lens[border:]):
@@ -497,4 +496,3 @@ def predict(model, batches, device):
         index -= batch_size - border
         preds = preds[:index]
     return preds
-"""

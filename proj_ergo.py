@@ -618,14 +618,14 @@ def predict(args):
     peps_copy = peps.copy()
     """
     test_data_path = args.test_data_path
-    _, test = proj_data_loader.load_data("", test_data_path, False)
-    tcrs, peps, signs = lstm_get_lists_from_pairs(test)
+    test = proj_data_loader.load_data_predict(test_data_path, False)
+    tcrs, peps, dummy_signs = lstm_get_lists_from_pairs(test)
     tcrs_copy = tcrs.copy()
     peps_copy = peps.copy()
 
+    device = args.device
     """
     # Load model
-    device = args.device
     if args.model_type == 'ae':
         model = AutoencoderLSTMClassifier(10, device, 28, 21, 100, 50, args.ae_file, False)
         checkpoint = torch.load(args.model_file, map_location=device)
@@ -653,17 +653,21 @@ def predict(args):
     """
     if args.model_type == 'lstm':
         lstm.convert_data(tcrs, peps, amino_to_ix)
-        #test_batches = lstm.get_full_batches(tcrs, peps, signs, batch_size, amino_to_ix)
-        test_batches = lstm.get_batches(tcrs, peps, signs, params['batch_size'])
-        #preds = lstm.predict(model, test_batches, device, best_threshold)
-    #TODO: change so that without label we also provide the probality
-    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model, test_batches, device, best_threshold)
-    print (f"Predict:{args.test_data_path} using mode:{args.model_file} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:{test_thresh}")
-    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model, test_batches, device, 0.5)
-    print (f"Predict:{args.test_data_path} using mode:{args.model_file} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:0.5")
+        test_batches = lstm.get_full_batches(tcrs, peps, dummy_signs, params['batch_size'], amino_to_ix)
+        #test_batches = lstm.get_batches(tcrs, peps, dummy_signs, params['batch_size'])
+        preds = lstm.predict(model, test_batches, device, best_threshold)
+
     # Print predictions
-    #for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
-    #    print('\t'.join([tcr, pep, str(pred)]))
+    output_file = 'output.csv'
+    # Open the CSV file in write mode
+    with open(output_file, mode='w', newline='') as file:
+        writer = csv.writer(file, delimiter='\t')
+        # Write the header row (if you want to include headers)
+        writer.writerow(['TCR', 'Peptide', 'Prediction'])
+        # Write the data rows
+        for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
+            writer.writerow([tcr, pep, pred])
+        
 
 
 if __name__ == '__main__':
