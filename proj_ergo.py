@@ -192,12 +192,13 @@ def main(args):
     params = {}
     params['lr'] = 1e-4
     params['wd'] = 0    #L2 regularization
+    #params['epochs'] = 3 #Test
     params['epochs'] = 100 #Original
     #params['epochs'] = 200 - arg['restore_epoch']
     params['batch_size'] = 50 #Original
     #params['batch_size'] = 32
     # Number of epochs to wait for improvement
-    params['patience'] = 25
+    params['patience'] = 10
     # Save model per epoch in case of crash
     params['model_save_occur'] = 30
     params['lstm_dim'] = 500
@@ -284,23 +285,28 @@ def main(args):
         test_batches = lstm.get_batches(test_tcrs, test_peps, test_signs, params['batch_size'])
 
         if arg['kfold'] > 1:
+            print('Using val from train for early stopping')
             # Initialize the KFold cross-validator
             kf = KFold(n_splits=arg['kfold'] if arg['kfold'] > 1 else 5, shuffle=True, random_state=42)  # Set shuffle=True for randomness
         
             for fold, (train_idx, val_idx) in enumerate(kf.split(train_tcrs), 1):
+                print(f'kfold: {fold}')
                 # Split the data into training and validation sets based on the current fold
                 train_tcrs_fold = [train_tcrs[i] for i in train_idx]
                 train_peps_fold = [train_peps[i] for i in train_idx]
                 train_signs_fold = [train_signs[i] for i in train_idx]
 
+                print(f'{fold}: preparing validation set')
                 val_tcrs_fold = [train_tcrs[i] for i in val_idx]
                 val_peps_fold = [train_peps[i] for i in val_idx]
                 val_signs_fold = [train_signs[i] for i in val_idx]
 
                 # Create batches for training and validation data
+                print(f'{fold}: preparing batches')
                 train_batches = lstm.get_batches(train_tcrs_fold, train_peps_fold, train_signs_fold, params['batch_size'])
                 val_batches = lstm.get_batches(val_tcrs_fold, val_peps_fold, val_signs_fold, params['batch_size'])
 
+                print(f'{fold}: Training model')
                 # Train the model on this fold's training data and evaluate on validation data
                 model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
                 if arg['kfold'] == 1:
@@ -322,6 +328,7 @@ def main(args):
                     # Save best ROC curve and AUC
                     np.savez(args.roc_file+'_fold_' + str(fold) , fpr=best_roc[0], tpr=best_roc[1], auc=np.array(best_auc))
         else:
+            print('Using test for early stopping')
             train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
             # Train the model
             model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params, test_batches, 11)
@@ -680,7 +687,7 @@ if __name__ == '__main__':
         #train or predict
         parser.add_argument("function")
         # ALways lstm
-        #parser.add_argument("model_type")
+        parser.add_argument("model_type")
         #cpu or cuda or gpu etc
         parser.add_argument("device")
     parser.add_argument("--train_data_path")
@@ -706,8 +713,8 @@ if __name__ == '__main__':
     """
     args = parser.parse_args()
 
-    args.model_type = 'rf'
-    args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
+    #args.model_type = 'rf'
+    #args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
 
     if debug:
         args.function = 'train'
@@ -726,7 +733,7 @@ if __name__ == '__main__':
         args.test_data_path = '/home/pbist/AlgoCompBio/data/BAP/epi_split/test.csv'
         args.roc_file = "roc_file"
 
-    print('Default Model')
+    print('Default Model:', args.model_type)
     print('Default Embedding')
     print('Default LossFunc')
     print('Original Without EarlySTopping')
