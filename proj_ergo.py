@@ -296,13 +296,11 @@ def main(args):
                 train_peps_fold = [train_peps[i] for i in train_idx]
                 train_signs_fold = [train_signs[i] for i in train_idx]
 
-                print(f'{fold}: preparing validation set')
                 val_tcrs_fold = [train_tcrs[i] for i in val_idx]
                 val_peps_fold = [train_peps[i] for i in val_idx]
                 val_signs_fold = [train_signs[i] for i in val_idx]
 
                 # Create batches for training and validation data
-                print(f'{fold}: preparing batches')
                 train_batches = lstm.get_batches(train_tcrs_fold, train_peps_fold, train_signs_fold, params['batch_size'])
                 val_batches = lstm.get_batches(val_tcrs_fold, val_peps_fold, val_signs_fold, params['batch_size'])
 
@@ -713,30 +711,32 @@ if __name__ == '__main__':
     """
     args = parser.parse_args()
 
-    #args.model_type = 'rf'
-    #args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
-
     if debug:
+        # args.model_type = 'rf'
+        args.model_type = lstm
+        args.kfold = 5
+        # args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
+
         args.function = 'train'
         #args.device = 'cpu'
         args.device = 'cuda'
-        """
-        args.train_data_path = 'proj_data\\BAP\\tcr_split\\train.csv'
-        args.test_data_path = 'proj_data\\BAP\\tcr_split\\test.csv'
-        """
+        args.train_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
+        args.test_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
         """
         args.train_data_path = '/home/pbist/AlgoCompBio/data/BAP/tcr_split/train.csv'
         args.test_data_path = '/home/pbist/AlgoCompBio/data/BAP/tcr_split/test.csv'
         print("Using TCR split")
         """
+        """
         args.train_data_path = '/home/pbist/AlgoCompBio/data/BAP/epi_split/train.csv'
         args.test_data_path = '/home/pbist/AlgoCompBio/data/BAP/epi_split/test.csv'
+        """
         args.roc_file = "roc_file"
 
     print('Default Model:', args.model_type)
     print('Default Embedding')
     print('Default LossFunc')
-    print('Original Without EarlySTopping')
+    print('Original With EarlySTopping')
     print(f'Step LR params: step{args.lr_step}, gamma:{args.lr_gamma}')
     print(f'kfold: {args.kfold}')
     print(f'Using Training set {args.train_data_path} and test {args.test_data_path}')
