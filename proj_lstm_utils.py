@@ -1,3 +1,5 @@
+import copy
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -5,7 +7,7 @@ from random import shuffle
 import time
 import numpy as np
 import torch.autograd as autograd
-from proj_ERGO_models import DoubleLSTMClassifier
+from proj_ERGO_models import DoubleLSTMClassifier, ModifiedDoubleLSTMClassifier
 from torch.optim.lr_scheduler import StepLR
 import os
 from sklearn.svm import SVC
@@ -302,8 +304,12 @@ def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
     # Set model with relevant parameters
     if args['siamese'] is True:
         model = SiameseLSTMClassifier(params['emb_dim'], params['lstm_dim'], device)
-    else:
+    elif args['lstm_type'] == 0:
         model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
+    elif args['lstm_type'] == 1:
+        model = ModifiedDoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
+    else:
+        model = ModifiedDoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device, True)
     if args['restore_epoch']:
         checkpoint = torch.load(args['temp_model_path'])
         model.load_state_dict(checkpoint['model_state_dict'])
@@ -333,7 +339,7 @@ def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
         # Compute auc
         #train_auc = evaluate(model, batches, device)[0]
         #Use 0.5 threshold
-        train_auc, (train_acc, train_prec, train_recall, train_f1, train_thresh), train_roc = evaluate(model, batches, device, 0.5)
+        train_auc, [train_acc, train_prec, train_recall, train_f1, train_thresh], train_roc = evaluate(model, batches, device, 0.5)
         #Pick best threshold
         #train_auc, (train_acc, train_prec, train_recall, train_f1, train_thresh), train_roc = evaluate(model, batches, device)
         print (f"train_auc:{train_auc}, train_acc:{train_acc}, train_prec:{train_prec}, train_recall:{train_recall}, train_f1:{train_f1}, train_thresh:{train_thresh}")
@@ -343,7 +349,7 @@ def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
             file.write(str(train_auc) + '\n')
 
         #val_auc, roc = evaluate(model, val_batches, device)
-        val_auc, (val_acc, val_prec, val_recall, val_f1, val_thresh), val_roc = evaluate(model, val_batches, device, train_thresh)
+        val_auc, [val_acc, val_prec, val_recall, val_f1, val_thresh], val_roc = evaluate(model, val_batches, device, train_thresh)
         print (f"val_auc:{val_auc}, val_acc:{val_acc}, val_prec:{val_prec}, val_recall:{val_recall}, val_f1:{val_f1}, val_thresh:{val_thresh}")
         #print('val auc:', val_auc)
         with open(args['val_auc_file']+'_fold_'+str(kIdx), 'a+') as file:
@@ -357,7 +363,7 @@ def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
             best_thresh = train_thresh
             best_epoch = epoch  # Save the epoch with the best AUC
             epochs_without_improvement = 0  # Reset the counter
-            model_best = model
+            model_best = copy.deepcopy(model)
             # Save best model checkpoint in case of crash(for recovery)
             torch.save({'model_state_dict': model.state_dict()}, args['temp_model_path']+'_best.pt')
             print(f"Best Model saved at epoch {epoch + 1} to {args['temp_model_path']+'_best.pt'} with thres{best_thresh}")
@@ -392,9 +398,9 @@ def train_model(batches, val_batches, device, args, params, test_batches, kIdx):
     # print(roc_auc)
     """
 
-    test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc = evaluate(model_best, test_batches, device, best_thresh)
+    test_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], test_roc = evaluate(model_best, test_batches, device, best_thresh)
     print (f"kfold:{kIdx} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:{test_thresh}")
-    return model_best, test_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), test_roc
+    return model_best, test_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], test_roc
     #return model_best, best_auc, best_roc
 
 
@@ -427,13 +433,14 @@ def evaluate(model, batches, device, threshold=-1.0):
 
     predicted_labels = (np.array(scores) >= threshold).astype(int)
 
+    #print(true, '\n', predicted_labels.flatten())
     # Calculate metrics
     accuracy = accuracy_score(true, predicted_labels)
     precision = precision_score(true, predicted_labels)
     recall = recall_score(true, predicted_labels)
     f1 = f1_score(true, predicted_labels)
 
-    return auc, (accuracy, precision, recall, f1, threshold), (fpr, tpr, thresholds)
+    return auc, [accuracy, precision, recall, f1, threshold], [fpr, tpr, thresholds]
     #return auc, (fpr, tpr, thresholds)
 
 

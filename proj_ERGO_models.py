@@ -75,26 +75,61 @@ class DoubleLSTMClassifier(nn.Module):
         output = F.sigmoid(mlp_output)
         return output
 
+
 class ModifiedDoubleLSTMClassifier(nn.Module):
-    def __init__(self, embedding_dim, lstm_dim, dropout, device):
-        super(DoubleLSTMClassifier, self).__init__()
+    def __init__(self, embedding_dim, lstm_dim, dropout, device, useTrans=False, numHead=4):
+        super(ModifiedDoubleLSTMClassifier, self).__init__()
         # GPU
         self.device = device
         # Dimensions
         self.embedding_dim = embedding_dim
         self.lstm_dim = lstm_dim
         self.dropout = dropout
+        self.useT = useTrans
+        self.head = numHead
+
         # Embedding matrices - 20 amino acids + padding
         self.tcr_embedding = nn.Embedding(20 + 1, embedding_dim, padding_idx=0)
         self.pep_embedding = nn.Embedding(20 + 1, embedding_dim, padding_idx=0)
         # RNN - LSTM
         self.tcr_lstm = nn.LSTM(embedding_dim, lstm_dim, num_layers=2, batch_first=True, dropout=dropout)
         self.pep_lstm = nn.LSTM(embedding_dim, lstm_dim, num_layers=2, batch_first=True, dropout=dropout)
+
+        if self.useT:
+            # Transformer Encoder Layer
+            self.transformer_encoder_layer = nn.TransformerEncoderLayer(
+                d_model=32,  # input dimension (embedding dimension)
+                nhead=numHead,        # number of attention heads
+                dim_feedforward=32*4, # feedforward layer dimension
+                dropout=dropout         # dropout rate
+            )
+            self.transformer_encoder = nn.TransformerEncoder(
+                self.transformer_encoder_layer,
+                num_layers=2  # number of transformer encoder layers
+            )
+
         # MLP
+        """
         self.hidden_layer = nn.Linear(lstm_dim * 2, lstm_dim)
-        self.relu = torch.nn.LeakyReLU()
-        self.output_layer = nn.Linear(lstm_dim, 1)
+        self.relu = torch.nn.GELU()
+        #self.relu = torch.nn.LeakyReLU()
         self.dropout = nn.Dropout(p=dropout)
+        """
+        if not self.useT:
+            self.tcr_norm = nn.LayerNorm(lstm_dim)
+            self.pep_norm = nn.LayerNorm(lstm_dim)
+            print(f"Norm Layer: Using 2 Hidden layer {lstm_dim * 8} {lstm_dim * 2} with GELU and dropout {dropout} {dropout / 2}")
+            self.hidden_layer2 = nn.Linear(lstm_dim*2, lstm_dim*8)
+            self.relu2 = torch.nn.GELU()
+            self.dropout2 = nn.Dropout(p=dropout)
+            self.hidden_layer3 = nn.Linear(lstm_dim*8, lstm_dim*2)
+            self.relu3 = torch.nn.GELU()
+            self.dropout3 = nn.Dropout(p=dropout/2)
+            self.output_layer = nn.Linear(lstm_dim * 2, 1)
+        else:
+            print(f"Using 2 Trans Encoder with head {numHead} and dropout {dropout}")
+            self.output_layer = nn.Linear(32, 1)
+
 
     def init_hidden(self, batch_size):
         return (autograd.Variable(torch.zeros(2, batch_size, self.lstm_dim)).to(self.device),
@@ -123,15 +158,31 @@ class ModifiedDoubleLSTMClassifier(nn.Module):
         pep_last_cell = torch.cat([pep_lstm_out[i, j.data - 1] for i, j in enumerate(pep_lens)]).view(len(pep_lens), self.lstm_dim)
 
         # Concatenate features
-        tcr_pep_concat = torch.cat([tcr_last_cell, pep_last_cell], 1)
+        if not self.useT:
+            tcr_last_cell = self.tcr_norm(tcr_last_cell)
+            pep_last_cell = self.pep_norm(pep_last_cell)
+            tcr_pep_concat = torch.cat([tcr_last_cell, pep_last_cell], 1)
+        else:
+            tcr_pep_concat = torch.cat([tcr_last_cell, pep_last_cell], 1)
+            tcr_pep_concat = tcr_pep_concat.reshape(-1, 32, 32)
+            #tcr_pep_concat = torch.stack((tcr_last_cell, pep_last_cell), dim=1)
+            tcr_pep_concat = tcr_pep_concat.permute(1, 0, 2)  # [seq_len, batch_size, lstm_dim*2]
 
         # Return features if requested
         if extract_features:
             return tcr_pep_concat
 
         # Pass through MLP
-        hidden_output = self.dropout(self.relu(self.hidden_layer(tcr_pep_concat)))
-        mlp_output = self.output_layer(hidden_output)
+        #hidden_output = self.dropout(self.relu(self.hidden_layer(tcr_pep_concat)))
+        if self.useT == False:
+            hidden_output = self.dropout2(self.relu2(self.hidden_layer2(tcr_pep_concat)))
+            hidden_output = self.dropout3(self.relu3(self.hidden_layer3(hidden_output)))
+            mlp_output = self.output_layer(hidden_output)
+        else:
+            transformer_output = self.transformer_encoder(tcr_pep_concat)  # [seq_len, batch_size, lstm_dim*2]
+            hidden_output = transformer_output[-1, :, :]
+            mlp_output = self.output_layer(hidden_output)
+
         output = torch.sigmoid(mlp_output)
         return output
 

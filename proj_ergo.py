@@ -147,7 +147,7 @@ def main(args):
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
     # Word to index dictionary
     amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
-    if args.model_type == 'lstm' or args.model_type == 'svm' or args.model_type == 'rf':
+    if args.model_type == 'lstm' or args.model_type == 'lstm2' or args.model_type == 'lstmT' or args.model_type == 'svm' or args.model_type == 'rf':
         amino_to_ix = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
     """
     if args.model_type == 'ae':
@@ -188,6 +188,7 @@ def main(args):
         arg['ae_file'] = 'TCR_Autoencoder/tcr_ae_dim_30.pt'
         pass
     """
+    arg['lstm_type'] = 0 if args.model_type == 'lstm' else 1 if args.model_type == 'lstm2' else 2
     arg['siamese'] = False
     params = {}
     params['lr'] = 1e-4
@@ -195,16 +196,16 @@ def main(args):
     #params['epochs'] = 3 #Test
     params['epochs'] = 100 #Original
     #params['epochs'] = 200 - arg['restore_epoch']
-    params['batch_size'] = 50 #Original
-    #params['batch_size'] = 32
+    #params['batch_size'] = 50 #Original
+    params['batch_size'] = 64
     # Number of epochs to wait for improvement
     params['patience'] = 10
     # Save model per epoch in case of crash
     params['model_save_occur'] = 30
-    params['lstm_dim'] = 500
-    params['emb_dim'] = 10
-    #params['dropout'] = 0.2
-    params['dropout'] = 0.1 #Original
+    params['lstm_dim'] = 512
+    params['emb_dim'] = 16
+    params['dropout'] = 0.2
+    #params['dropout'] = 0.1 #Original
     params['option'] = 0
     params['enc_dim'] = 100
     params['train_ae'] = True
@@ -274,7 +275,8 @@ def main(args):
         model, best_auc, best_roc = ae.train_model(train_batches, test_batches, args.device, arg, params)
         pass
     """
-    if args.model_type == 'lstm':
+    if args.model_type == 'lstm' or args.model_type == 'lstm2' or args.model_type == 'lstmT':
+
         # train
         train_tcrs, train_peps, train_signs = lstm_get_lists_from_pairs(train)
         lstm.convert_data(train_tcrs, train_peps, amino_to_ix)
@@ -306,7 +308,7 @@ def main(args):
 
                 print(f'{fold}: Training model')
                 # Train the model on this fold's training data and evaluate on validation data
-                model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
+                model, best_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], best_roc = lstm.train_model(train_batches, val_batches, args.device, arg, params, test_batches, fold)
                 if arg['kfold'] == 1:
                     break
 
@@ -329,7 +331,7 @@ def main(args):
             print('Using test for early stopping')
             train_batches = lstm.get_batches(train_tcrs, train_peps, train_signs, params['batch_size'])
             # Train the model
-            model, best_auc, (test_acc, test_prec, test_recall, test_f1, test_thresh), best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params, test_batches, 11)
+            model, best_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], best_roc = lstm.train_model(train_batches, test_batches, args.device, arg, params, test_batches, 11)
         pass
 
     if args.model_type == 'svm':
@@ -369,7 +371,7 @@ def main(args):
         dump(model, "svm_model.joblib")
     elif args.model_type == "rf":
         dump(model, "rf_model.joblib")
-    elif args.model_type == "lstm": 
+    elif args.model_type == "lstm" or args.model_type == 'lstm2' or args.model_type == 'lstmT':
         if args.model_file == 'auto':
             dir = timestamp
             args.model_file = os.path.join(dir, '_'.join([args.model_type, 'model.pt']))
@@ -582,7 +584,7 @@ def protein_test(args):
     return rocs
 
 
-def predict(args):
+def predict(args, test=False):
     # Word to index dictionary
     amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
     if args.model_type == 'lstm':
@@ -625,7 +627,10 @@ def predict(args):
     peps_copy = peps.copy()
     """
     test_data_path = args.test_data_path
-    test = proj_data_loader.load_data_predict(test_data_path, False)
+    if test:
+        test = proj_data_loader.read_data(test_data_path)
+    else:
+        test = proj_data_loader.load_data_predict(test_data_path, False)
     tcrs, peps, dummy_signs = lstm_get_lists_from_pairs(test)
     tcrs_copy = tcrs.copy()
     peps_copy = peps.copy()
@@ -644,15 +649,16 @@ def predict(args):
         checkpoint = torch.load(args.model_file, map_location=device)
         best_threshold = checkpoint['best_threshold']
         params = checkpoint['params']
-        model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
-        #model = DoubleLSTMClassifier(10, 500, 0.1, device)
+        print(f'Params: {params} best th:{best_threshold}')
+        batch_size = 50
+        #model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
+        model = DoubleLSTMClassifier(10, 500, 0.1, device)
         model.load_state_dict(checkpoint['model_state_dict'])
         model.to(device)
         model.eval()
         pass
 
     # Predict
-    batch_size = params['batch_size']
     """
     if args.model_type == 'ae':
         test_batches = ae.get_full_batches(tcrs, peps, signs, tcr_atox, pep_atox, batch_size, max_len)
@@ -660,20 +666,28 @@ def predict(args):
     """
     if args.model_type == 'lstm':
         lstm.convert_data(tcrs, peps, amino_to_ix)
-        test_batches = lstm.get_full_batches(tcrs, peps, dummy_signs, params['batch_size'], amino_to_ix)
-        #test_batches = lstm.get_batches(tcrs, peps, dummy_signs, params['batch_size'])
-        preds = lstm.predict(model, test_batches, device, best_threshold)
+        if test:
+            test_batches = lstm.get_batches(tcrs, peps, dummy_signs, batch_size)
+            test_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], test_roc = evaluate(model,
+                                                                                                    test_batches,
+                                                                                                    device, best_threshold)
+            print(
+                f"kfold:{kIdx} test_auc:{test_auc}, test_acc:{test_acc}, test_prec:{test_prec}, test_recall:{test_recall}, test_f1:{test_f1}, test_thresh:{test_thresh}")
+        else:
+            test_batches = lstm.get_full_batches(tcrs, peps, dummy_signs, batch_size, amino_to_ix)
+            preds = lstm.predict(model, test_batches, device)
 
-    # Print predictions
-    output_file = 'output.csv'
-    # Open the CSV file in write mode
-    with open(output_file, mode='w', newline='') as file:
-        writer = csv.writer(file, delimiter='\t')
-        # Write the header row (if you want to include headers)
-        writer.writerow(['TCR', 'Peptide', 'Prediction'])
-        # Write the data rows
-        for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
-            writer.writerow([tcr, pep, pred])
+    if not test:
+        # Print predictions
+        output_file = 'output.csv'
+        # Open the CSV file in write mode
+        with open(output_file, mode='w', newline='') as file:
+            writer = csv.writer(file, delimiter='\t')
+            # Write the header row (if you want to include headers)
+            writer.writerow(['TCR', 'Peptide', 'Prediction'])
+            # Write the data rows
+            for tcr, pep, pred in zip(tcrs_copy, peps_copy, preds):
+                writer.writerow([tcr, pep, pred])
         
 
 
@@ -713,12 +727,12 @@ if __name__ == '__main__':
 
     if debug:
         # args.model_type = 'rf'
-        args.model_type = lstm
-        args.kfold = 5
         # args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
 
         args.function = 'train'
         #args.device = 'cpu'
+        args.model_type = 'lstmT'
+        args.kfold = 1
         args.device = 'cuda'
         args.train_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
         args.test_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
@@ -744,6 +758,8 @@ if __name__ == '__main__':
         enable_cuda(no_cuda=False)
     if args.function == 'train':
         main(args)
+    elif args.function == 'test':
+        predict(args, True)
     elif args.function == 'predict':
         predict(args)
     """
