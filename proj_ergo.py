@@ -197,13 +197,13 @@ def main(args):
     params['epochs'] = 100 #Original
     #params['epochs'] = 200 - arg['restore_epoch']
     #params['batch_size'] = 50 #Original
-    params['batch_size'] = 64
+    params['batch_size'] = 50 if args.model_type == 'lstm' else 64
     # Number of epochs to wait for improvement
     params['patience'] = 10
     # Save model per epoch in case of crash
     params['model_save_occur'] = 30
-    params['lstm_dim'] = 512
-    params['emb_dim'] = 16
+    params['lstm_dim'] = 500 if args.model_type == 'lstm' else 512
+    params['emb_dim'] = 10 if args.model_type == 'lstm' else 16
     params['dropout'] = 0.2
     #params['dropout'] = 0.1 #Original
     params['option'] = 0
