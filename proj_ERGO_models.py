@@ -116,9 +116,10 @@ class ModifiedDoubleLSTMClassifier(nn.Module):
         self.dropout = nn.Dropout(p=dropout)
         """
         if not self.useT:
-            self.tcr_norm = nn.LayerNorm(lstm_dim)
-            self.pep_norm = nn.LayerNorm(lstm_dim)
-            print(f"Norm Layer: Using 2 Hidden layer {lstm_dim * 8} {lstm_dim * 2} with GELU and dropout {dropout} {dropout / 2}")
+            #self.tcr_norm = nn.LayerNorm(lstm_dim)
+            #self.pep_norm = nn.LayerNorm(lstm_dim)
+            #print(f"Norm Layer: Using 2 Hidden layer {lstm_dim * 8} {lstm_dim * 2} with GELU and dropout {dropout} {dropout / 2}")
+            print(f"Using 2 Hidden layer {lstm_dim * 8} {lstm_dim * 2} with GELU and dropout {dropout} {dropout / 2}")
             self.hidden_layer2 = nn.Linear(lstm_dim*2, lstm_dim*8)
             self.relu2 = torch.nn.GELU()
             self.dropout2 = nn.Dropout(p=dropout)
@@ -159,8 +160,8 @@ class ModifiedDoubleLSTMClassifier(nn.Module):
 
         # Concatenate features
         if not self.useT:
-            tcr_last_cell = self.tcr_norm(tcr_last_cell)
-            pep_last_cell = self.pep_norm(pep_last_cell)
+            #tcr_last_cell = self.tcr_norm(tcr_last_cell)
+            #pep_last_cell = self.pep_norm(pep_last_cell)
             tcr_pep_concat = torch.cat([tcr_last_cell, pep_last_cell], 1)
         else:
             tcr_pep_concat = torch.cat([tcr_last_cell, pep_last_cell], 1)

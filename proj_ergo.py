@@ -202,8 +202,8 @@ def main(args):
     params['patience'] = 10
     # Save model per epoch in case of crash
     params['model_save_occur'] = 30
-    params['lstm_dim'] = 500 if args.model_type == 'lstm' else 512
-    params['emb_dim'] = 10 if args.model_type == 'lstm' else 16
+    params['lstm_dim'] = 512 if args.model_type == 'lstmT' else 500
+    params['emb_dim'] = 16 if args.model_type == 'lstmT' else 10
     params['dropout'] = 0.2
     #params['dropout'] = 0.1 #Original
     params['option'] = 0
