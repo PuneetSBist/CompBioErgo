@@ -25,11 +25,13 @@ def read_data(csv_file, is_predict=False):
             # Proper tcr and peptides
             if any(att == 'NA' or att == "" for att in [tcr, pep]):
                 continue
-                """
+            if 'B' in tcr + pep:
+                continue
+                
             if any(key in tcr + pep for key in ['#', '*', 'b', 'f', 'y', '~',
                                                 'O', '/', '1', 'X', '_', 'B', '7']):
                 continue
-                """
+                
             all_pairs.append((tcr, pep, label))
     return all_pairs
 
