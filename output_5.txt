@@ -1,0 +1,147 @@
+/home/vpalod/.local/lib/python3.12/site-packages/torch/nn/modules/rnn.py:1135: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:1410.)
+  result = _VF.lstm(
+Default Model: lstm
+Default Embedding
+Default LossFunc
+Original With EarlySTopping
+Step LR params: step5, gamma:1.0
+kfold: 1
+Using Training set /scratch/vpalod/CompBioErgo-main/proj_data/BAP/tcr_split/train.csv and test /scratch/vpalod/CompBioErgo-main/proj_data/BAP/tcr_split/test.csv
+should enbale GPU?  True
+Params:  {'lr': 0.0001, 'wd': 0, 'epochs': 100, 'batch_size': 50, 'patience': 10, 'model_save_occur': 30, 'lstm_dim': 500, 'emb_dim': 10, 'dropout': 0.3, 'option': 0, 'enc_dim': 100, 'train_ae': True}
+Using test for early stopping
+epoch: 1
+train_auc:0.7203418189462093, train_acc:0.6562488599823851, train_prec:0.7111738148984199, train_recall:0.5256527905230667, train_f1:0.6044994483618746, train_thresh:0.5
+val_auc:0.7188039959403518, val_acc:0.6580207335859112, val_prec:0.7128489094812973, val_recall:0.5265002921292046, val_f1:0.6056649063850216, val_thresh:0.5
+Best Model saved at epoch 1 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 85.30210423469543
+epoch: 2
+train_auc:0.7353442076774375, train_acc:0.6660621316114508, train_prec:0.6924668223224979, train_recall:0.5968966380245265, train_f1:0.641139804096171, train_thresh:0.5
+val_auc:0.7347071179558696, val_acc:0.669449186061035, val_prec:0.6964850017015898, val_recall:0.5978632835322594, val_f1:0.6434169454986414, val_thresh:0.5
+Best Model saved at epoch 2 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 87.64490985870361
+epoch: 3
+train_auc:0.747322544698565, train_acc:0.6748539474575653, train_prec:0.7035304694333755, train_recall:0.6038729456911655, train_f1:0.6499034835697611, train_thresh:0.5
+val_auc:0.7451293861692377, val_acc:0.6751530038719347, val_prec:0.7048987397636444, val_recall:0.5999081879642768, val_f1:0.6481794611655958, val_thresh:0.5
+Best Model saved at epoch 3 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 85.29753923416138
+epoch: 4
+train_auc:0.7584916204318598, train_acc:0.6831610929576878, train_prec:0.6973906197278147, train_recall:0.6465858847084341, train_f1:0.6710279969265067, train_thresh:0.5
+val_auc:0.7563734077405246, val_acc:0.6832507598151464, val_prec:0.6971240533717995, val_recall:0.6453968783907854, val_f1:0.670263944870628, val_thresh:0.5
+Best Model saved at epoch 4 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.2675769329071
+epoch: 5
+train_auc:0.7686456252119678, train_acc:0.6886905041092749, train_prec:0.6921923996811055, train_recall:0.6790481354801035, train_f1:0.6855572692674144, train_thresh:0.5
+val_auc:0.7658175097431985, val_acc:0.6898497023189974, val_prec:0.6936124759666737, val_recall:0.6774893581504048, val_f1:0.6854561192391327, val_thresh:0.5
+Best Model saved at epoch 5 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.11060166358948
+epoch: 6
+train_auc:0.7792630722399877, train_acc:0.7008228972863673, train_prec:0.7407097024353025, train_recall:0.6175335780428798, train_f1:0.673536353038187, train_thresh:0.5
+val_auc:0.7750061191614528, val_acc:0.6985303301552938, val_prec:0.7388149939540508, val_recall:0.6119689508388282, val_f1:0.6694362017804154, val_thresh:0.5
+Best Model saved at epoch 6 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.1984224319458
+epoch: 7
+train_auc:0.7856647750688799, train_acc:0.7058989071465425, train_prec:0.7683864035147376, train_recall:0.5890860932677067, train_f1:0.6668949030487265, train_thresh:0.5
+val_auc:0.7802604199463572, val_acc:0.7034639243931887, val_prec:0.7663213287288275, val_recall:0.5834237542776062, val_f1:0.6624807487264542, val_thresh:0.5
+Best Model saved at epoch 7 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.22615790367126
+epoch: 8
+train_auc:0.7867337645919974, train_acc:0.7052839490731331, train_prec:0.7775818035585783, train_recall:0.5746642195712022, train_f1:0.6608981393201293, train_thresh:0.5
+val_auc:0.7786464568789823, val_acc:0.7014446896207169, val_prec:0.7733886552233716, val_recall:0.5678574409481679, val_f1:0.6548753489267495, val_thresh:0.5
+one epoch time: 84.04708981513977
+epoch: 9
+train_auc:0.8006592557801225, train_acc:0.7167336345585591, train_prec:0.7920967515117424, train_recall:0.5873654792692083, train_f1:0.6745386393303234, train_thresh:0.5
+val_auc:0.7904959897738623, val_acc:0.7102294017236355, val_prec:0.7831923293852228, val_recall:0.5795008763876137, val_f1:0.6661229972176916, val_thresh:0.5
+Best Model saved at epoch 9 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.25359869003296
+epoch: 10
+train_auc:0.8059276937111025, train_acc:0.7234043662023212, train_prec:0.7703272561991819, train_recall:0.6362413447901893, train_f1:0.6968932038834952, train_thresh:0.5
+val_auc:0.7942143233126816, val_acc:0.7152670802281527, val_prec:0.7608563311688312, val_recall:0.6259076871713547, val_f1:0.6868159545725145, val_thresh:0.5
+Best Model saved at epoch 10 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.3740291595459
+epoch: 11
+train_auc:0.810847533716671, train_acc:0.7259111020778287, train_prec:0.7411966535586574, train_recall:0.693824559939935, train_f1:0.7167286966169888, train_thresh:0.5
+val_auc:0.7973981991811563, val_acc:0.7158915858278863, val_prec:0.7304083638638191, val_recall:0.6822468909106084, val_f1:0.7055066459520111, val_thresh:0.5
+Best Model saved at epoch 11 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.22378587722778
+epoch: 12
+train_auc:0.8194368251455563, train_acc:0.7335459629044783, train_prec:0.7582967920609278, train_recall:0.6852632018019521, train_f1:0.7199325138587611, train_thresh:0.5
+val_auc:0.8032490272055194, val_acc:0.7218035721720305, val_prec:0.7451878585970757, val_recall:0.6721058342375428, val_f1:0.7067626278141045, val_thresh:0.5
+Best Model saved at epoch 12 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 87.80729913711548
+epoch: 13
+train_auc:0.824184584685072, train_acc:0.7375953054726057, train_prec:0.8014987223788907, train_recall:0.6312880620672395, train_f1:0.7062831409287919, train_thresh:0.5
+val_auc:0.8043655548987065, val_acc:0.7219701069986261, val_prec:0.7809089945968852, val_recall:0.6152241048326517, val_f1:0.6882352941176471, val_thresh:0.5
+Best Model saved at epoch 13 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.82243585586548
+epoch: 14
+train_auc:0.8311812375111428, train_acc:0.7440732112797903, train_prec:0.806452880609919, train_recall:0.641976724785184, train_f1:0.7148762729774609, train_thresh:0.5
+val_auc:0.8069422112022387, val_acc:0.7237811732378534, val_prec:0.7809954275503233, val_recall:0.6201485685668976, val_f1:0.6913396450254716, val_thresh:0.5
+Best Model saved at epoch 14 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.78698492050171
+epoch: 15
+train_auc:0.8370510687294841, train_acc:0.7498684093953086, train_prec:0.8014853977844915, train_recall:0.6639484441478268, train_f1:0.7262627184377424, train_thresh:0.5
+val_auc:0.8086635698692171, val_acc:0.7294225404887797, val_prec:0.7768966562279018, val_recall:0.6418913279358985, val_f1:0.7029707495429616, val_thresh:0.5
+Best Model saved at epoch 15 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.60401320457458
+epoch: 16
+train_auc:0.8445142003814546, train_acc:0.7564818144390071, train_prec:0.7800152624804948, train_recall:0.714138233085843, train_f1:0.7456244930400179, train_thresh:0.5
+val_auc:0.80906686216459, val_acc:0.726716349556601, val_prec:0.7469456601021153, val_recall:0.6837910024204992, val_f1:0.7139744651183058, val_thresh:0.5
+one epoch time: 84.77907967567444
+epoch: 17
+train_auc:0.8510018637564227, train_acc:0.7629962008098685, train_prec:0.8073242389886504, train_recall:0.6905814632518562, train_f1:0.7444035408177603, train_thresh:0.5
+val_auc:0.8103569847931263, val_acc:0.7289853865689663, val_prec:0.7670196671709532, val_recall:0.6559135297554461, val_f1:0.7071288776910445, val_thresh:0.5
+one epoch time: 84.46759128570557
+epoch: 18
+train_auc:0.8609442633430149, train_acc:0.771235596691734, train_prec:0.808744596969553, train_recall:0.7102068907983649, train_f1:0.7562795655939769, train_thresh:0.5
+val_auc:0.8139583206999164, val_acc:0.7314209584079271, val_prec:0.7633333333333333, val_recall:0.6689758784742509, val_f1:0.7130465726613585, val_thresh:0.5
+Best Model saved at epoch 18 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.06011080741882
+epoch: 19
+train_auc:0.868655917246062, train_acc:0.7779480204082696, train_prec:0.8367968651245101, train_recall:0.6903207641611746, train_f1:0.7565340616893135, train_thresh:0.5
+val_auc:0.8126841061231149, val_acc:0.7325867021940964, val_prec:0.7819602272727273, val_recall:0.6432685084717469, val_f1:0.7058661904107707, val_thresh:0.5
+Best Model saved at epoch 19 to 2024-12-13_20-09/lstm_psb_checkpoints_best.pt with thres0.5
+one epoch time: 84.00854086875916
+epoch: 20
+train_auc:0.8768705411120659, train_acc:0.785921629326204, train_prec:0.8333454952325355, train_recall:0.714534495703679, train_f1:0.7693801931282281, train_thresh:0.5
+val_auc:0.8132661709458318, val_acc:0.7321287314209584, val_prec:0.7708231618006054, val_recall:0.6588765545446957, val_f1:0.7104671046710467, val_thresh:0.5
+one epoch time: 84.32631325721741
+epoch: 21
+train_auc:0.8834647391499355, train_acc:0.7870316807637988, train_prec:0.8767956179390619, train_recall:0.6676816551263869, train_f1:0.7580821804275372, train_thresh:0.5
+val_auc:0.8102025852557516, val_acc:0.730130313501811, val_prec:0.8045862412761715, val_recall:0.6062098322343711, val_f1:0.6914508758568164, val_thresh:0.5
+one epoch time: 83.73629927635193
+epoch: 22
+train_auc:0.8965343941732696, train_acc:0.8042192377646795, train_prec:0.861685372356917, train_recall:0.7245557687494786, train_f1:0.7871931841999422, train_thresh:0.5
+val_auc:0.8113162251457037, val_acc:0.7313793247012782, val_prec:0.7766713370696557, val_recall:0.6477339120273767, val_f1:0.7063669048377554, val_thresh:0.5
+one epoch time: 84.25766229629517
+epoch: 23
+train_auc:0.9066865618079423, train_acc:0.8165288222510593, train_prec:0.8481625534941888, train_recall:0.7708872111454075, train_f1:0.8076807516866515, train_thresh:0.5
+val_auc:0.8095892070083996, val_acc:0.7282776135559349, val_prec:0.7516725880127347, val_recall:0.6798681245305066, val_f1:0.7139695409225375, val_thresh:0.5
+one epoch time: 84.25051307678223
+epoch: 24
+train_auc:0.9181489155036462, train_acc:0.8286091003371846, train_prec:0.8683056851260829, train_recall:0.7745265704513222, train_f1:0.8187394934825144, train_thresh:0.5
+val_auc:0.8061618179121428, val_acc:0.7264457304633831, val_prec:0.7561183431952663, val_recall:0.6665971120941491, val_f1:0.70854126466609, val_thresh:0.5
+one epoch time: 85.35090923309326
+epoch: 25
+train_auc:0.927523051367382, train_acc:0.8396627111312622, train_prec:0.8502140107112899, train_recall:0.8244139484441478, train_f1:0.8371152359674294, train_thresh:0.5
+val_auc:0.8059310510595645, val_acc:0.722428077771764, val_prec:0.7303025049839647, val_recall:0.7032384608964193, val_f1:0.7165150097797431, val_thresh:0.5
+one epoch time: 91.22025561332703
+epoch: 26
+train_auc:0.9402538902421811, train_acc:0.8513833950897162, train_prec:0.9059220434965962, train_recall:0.7840473012430133, train_f1:0.8405900799928449, train_thresh:0.5
+val_auc:0.8021880307898481, val_acc:0.7244889462508847, val_prec:0.7655592414715057, val_recall:0.6452716801602537, val_f1:0.7002875970923255, val_thresh:0.5
+one epoch time: 94.32068586349487
+epoch: 27
+train_auc:0.9505607921722534, train_acc:0.8708952851477202, train_prec:0.884635768752366, train_recall:0.8528927171102028, train_f1:0.8684742847131154, train_thresh:0.5
+val_auc:0.8025388087473994, val_acc:0.7214080519588659, val_prec:0.731965092312415, val_recall:0.69656122193473, val_f1:0.7138244413557148, val_thresh:0.5
+one epoch time: 88.94712805747986
+epoch: 28
+train_auc:0.9588233392379737, train_acc:0.8825221619424337, train_prec:0.9066276414111177, train_recall:0.8527571535830483, train_f1:0.8788676690274807, train_thresh:0.5
+val_auc:0.7997137892320203, val_acc:0.7201590407593988, val_prec:0.7377604990732788, val_recall:0.6810783740923129, val_f1:0.708287220884057, val_thresh:0.5
+one epoch time: 85.29249358177185
+epoch: 29
+train_auc:0.9674157085277937, train_acc:0.8962492769031128, train_prec:0.9187220348696247, train_recall:0.8693063318595144, train_f1:0.893331332983272, train_thresh:0.5
+val_auc:0.7968703110031654, val_acc:0.7167034431075399, val_prec:0.7340295673402957, val_recall:0.6775728236374259, val_f1:0.704672207634383, val_thresh:0.5
+one epoch time: 84.94999289512634
+Early stopping triggered at epoch 29 with no improvement in AUC
+Best Model was at epoch 19
+kfold:11 test_auc:0.8126841061231149, test_acc:0.7325867021940964, test_prec:0.7819602272727273, test_recall:0.6432685084717469, test_f1:0.7058661904107707, test_thresh:0.5
