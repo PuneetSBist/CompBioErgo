@@ -8,7 +8,7 @@ Step LR params: step5, gamma:1.0
 kfold: 1
 Using Training set /scratch/vpalod/CompBioErgo-main/proj_data/BAP/tcr_split/train.csv and test /scratch/vpalod/CompBioErgo-main/proj_data/BAP/tcr_split/test.csv
 should enbale GPU?  True
-Params:  {'lr': 0.0001, 'wd': 0, 'epochs': 100, 'batch_size': 50, 'patience': 10, 'model_save_occur': 30, 'lstm_dim': 500, 'emb_dim': 10, 'dropout': 0.3, 'option': 0, 'enc_dim': 100, 'train_ae': True}
+Params:  {'lr': 0.0001, 'wd': 0, 'epochs': 100, 'batch_size': 50, 'patience': 10, 'model_save_occur': 30, 'lstm_dim': 1024, 'emb_dim': 100, 'dropout': 0.3, 'option': 0, 'enc_dim': 100, 'train_ae': True}
 Using test for early stopping
 epoch: 1
 train_auc:0.7203418189462093, train_acc:0.6562488599823851, train_prec:0.7111738148984199, train_recall:0.5256527905230667, train_f1:0.6044994483618746, train_thresh:0.5
