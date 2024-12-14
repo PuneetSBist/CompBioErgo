@@ -2,6 +2,7 @@
 import torch
 import pickle
 import argparse
+import pandas as pd
 import proj_ae_utils as ae
 import proj_lstm_utils as lstm
 import proj_data_loader
@@ -584,9 +585,9 @@ def protein_test(args):
     return rocs
 
 
-def predict(args, test=False):
+def predict(args, isTest=False):
     # Word to index dictionary
-    amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYV']
+    amino_acids = [letter for letter in 'ARNDCEQGHILKMFPSTWYVB']
     if args.model_type == 'lstm':
         amino_to_ix = {amino: index for index, amino in enumerate(['PAD'] + amino_acids)}
     """
@@ -604,7 +605,7 @@ def predict(args, test=False):
         p_key = 'protein' if args.protein else ''
         args.model_file = dir + '/' + '_'.join([args.model_type, args.dataset, args.sampling, p_key, 'model.pt'])
         """
-    if args.test_data_file == 'auto':
+    if args.test_data_path == 'auto':
         return
         #args.test_data_file = 'pairs_example.csv'
 
@@ -627,7 +628,7 @@ def predict(args, test=False):
     peps_copy = peps.copy()
     """
     test_data_path = args.test_data_path
-    if test:
+    if isTest:
         test = proj_data_loader.read_data(test_data_path)
     else:
         test = proj_data_loader.load_data_predict(test_data_path, False)
@@ -647,9 +648,12 @@ def predict(args, test=False):
     """
     if args.model_type == 'lstm':
         checkpoint = torch.load(args.model_file, map_location=device)
-        best_threshold = checkpoint['best_threshold']
-        params = checkpoint['params']
-        print(f'Params: {params} best th:{best_threshold}')
+        if 'best_threshold' in checkpoint:
+            best_threshold = checkpoint['best_threshold']
+        else:
+            best_threshold = 0.5
+        #params = checkpoint['params']
+        #print(f'Params: {params} best th:{best_threshold}')
         batch_size = 50
         #model = DoubleLSTMClassifier(params['emb_dim'], params['lstm_dim'], params['dropout'], device)
         model = DoubleLSTMClassifier(10, 500, 0.1, device)
@@ -666,7 +670,7 @@ def predict(args, test=False):
     """
     if args.model_type == 'lstm':
         lstm.convert_data(tcrs, peps, amino_to_ix)
-        if test:
+        if isTest:
             test_batches = lstm.get_batches(tcrs, peps, dummy_signs, batch_size)
             test_auc, [test_acc, test_prec, test_recall, test_f1, test_thresh], test_roc = evaluate(model,
                                                                                                     test_batches,
@@ -677,7 +681,7 @@ def predict(args, test=False):
             test_batches = lstm.get_full_batches(tcrs, peps, dummy_signs, batch_size, amino_to_ix)
             preds = lstm.predict(model, test_batches, device)
 
-    if not test:
+    if not isTest:
         # Print predictions
         output_file = 'output.csv'
         # Open the CSV file in write mode
@@ -690,8 +694,34 @@ def predict(args, test=False):
                 writer.writerow([tcr, pep, pred])
         
 
+def find_unique():
+    from collections import Counter
+
+    filename = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\tcr_split_test.csv'
+    # Step 1: Read the CSV file
+    df = pd.read_csv(filename)  # Replace 'your_file.csv' with the path to your CSV file
+
+    # Step 2: Concatenate all the text from the CSV file into one large string
+    # This step assumes all data in the CSV is textual.
+    text = df.astype(str).agg(''.join, axis=1).str.cat(sep='')
+
+    # Step 3: Filter only alphabet characters
+    text = ''.join(char for char in text if char.isalpha())
+
+    # Step 4: Count occurrences of each unique character
+    char_count = Counter(text)
+
+    # Step 5: Display the result
+    for char, count in char_count.items():
+        print(f"Character: {char}, Count: {count}")
+
+
 
 if __name__ == '__main__':
+
+    find_unique()
+
+    exit(0)
     debug = False
 
     parser = argparse.ArgumentParser()
@@ -729,13 +759,15 @@ if __name__ == '__main__':
         # args.model_type = 'rf'
         # args.temp_model_path = 'D:\ASU 1-1\Algo in Comp Bio\CompBioErgo-main\RunData\TCR_split_32Batch_Drop20\lstm_model.pt'
 
-        args.function = 'train'
+        args.function = 'predict'
+        args.model_file = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\RunData\\EPI_SPLIT_BASE_MODEL\\lstm_psb_checkpoints_best.pt'
         #args.device = 'cpu'
-        args.model_type = 'lstmT'
+        args.model_type = 'lstm'
         args.kfold = 1
         args.device = 'cuda'
         args.train_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
-        args.test_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\train_250.csv'
+        args.test_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\BAP\\tcr_split\\test_100.csv'
+        args.test_data_path = 'C:\\Users\\bistp\\Downloads\\CLass\\CompBio\\Project\\Python\\CompBioErgo_Copy\\CompBioErgo\\proj_data\\epitope_split_test.csv'
         """
         args.train_data_path = '/home/pbist/AlgoCompBio/data/BAP/tcr_split/train.csv'
         args.test_data_path = '/home/pbist/AlgoCompBio/data/BAP/tcr_split/test.csv'

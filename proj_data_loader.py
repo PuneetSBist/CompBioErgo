@@ -14,7 +14,7 @@ def read_data(csv_file, is_predict=False):
         return all_pairs
 
     with open(csv_file, 'r', encoding='unicode_escape') as file:
-        file.readline()
+        #file.readline()
         reader = csv.reader(file)
 
         tcrs = set()
@@ -25,9 +25,11 @@ def read_data(csv_file, is_predict=False):
             # Proper tcr and peptides
             if any(att == 'NA' or att == "" for att in [tcr, pep]):
                 continue
+                """
             if any(key in tcr + pep for key in ['#', '*', 'b', 'f', 'y', '~',
                                                 'O', '/', '1', 'X', '_', 'B', '7']):
                 continue
+                """
             all_pairs.append((tcr, pep, label))
     return all_pairs
 
